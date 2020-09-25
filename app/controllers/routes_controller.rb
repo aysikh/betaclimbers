@@ -26,7 +26,7 @@ class RoutesController < ApplicationController
   end
 
   def update
-    @route = Route.update(route_params)
+    @route.update(route_params)
     if @route.save
       redirect_to route_path(@route)
     else
@@ -42,7 +42,7 @@ class RoutesController < ApplicationController
   private
 
   def find_route
-    @id = Route.find(params[:id])
+    @route = Route.find(params[:id])
   end
 
   def route_params
