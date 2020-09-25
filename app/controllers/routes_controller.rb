@@ -42,7 +42,7 @@ class RoutesController < ApplicationController
   private
 
   def find_route
-    id = Route.find(params[:id])
+    @id = Route.find(params[:id])
   end
 
   def route_params

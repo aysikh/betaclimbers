@@ -20,7 +20,8 @@ new_river_gorge = Location.create(name: "New River Gorge", rock_type: "Sandstone
 
 location_ids = Location.all.map{ |location| location.id }
 #ROUTES
-thenose = Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: yosemite.id)
+Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: yosemite.id)
+Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: yosemite.id)
 
 
 #COMMUNITIES

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  #trim this file down to just the routes you need upon refactoring
   resources :memberships
   resources :communities
   resources :locations
   resources :projects
   resources :routes
   resources :climbers
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
