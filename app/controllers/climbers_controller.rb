@@ -16,10 +16,16 @@ class ClimbersController < ApplicationController
 
   def create
     @climber = Climber.new(climber_params)
+    communities = params["climber"]["communities"]
+    communities.shift
+    communities.each do |community|
+      @climber.communities << Community.find(community.to_i)
+    end
     if @climber.save
       redirect_to climber_path(@climber.id)
     else 
       render :new
+    end
   end
 
   def edit
@@ -27,11 +33,12 @@ class ClimbersController < ApplicationController
   end
 
   def update
-    @climber = Climber.update(climber_params)
+    @climber.update(climber_params)
     if @climber.save
       redirect_to climber_path(@climber)
     else
       render :edit
+    end
   end
 
   def destroy
@@ -41,12 +48,11 @@ class ClimbersController < ApplicationController
   private
 
   def find_climber
-    id = Climber.find(params[:id])
+    @climber = Climber.find(params[:id])
   end
 
   def climber_params
     params.require(:climber).permit(:name, :experience, :birthyear, :bio, :height, :weight, :origin, :preference, :profile_pic)
   end
-
 
 end

@@ -7,6 +7,7 @@ Route.destroy_all
 Project.destroy_all
 Location.destroy_all
 Community.destroy_all
+Membership.destroy_all
 
 # CLIMBERS
 Climber.create(name: "Alex Honnold", experience: "Elite", birthyear: 1985, bio: "Alex Honnold is a professional adventure rock climber whose audacious free-solo ascents of America’s biggest cliffs have made him one of the most recognized and followed climbers in the world. A gifted but hard-working athlete, Alex “No Big Deal” Honnold is known as much for his humble, self-effacing attitude as he is for the dizzyingly tall cliffs he has climbed without a rope to protect him if he falls. Honnold has been profiled by 60 Minutes and the New York Times, featured on the cover of National Geographic, appeared in international television commercials and starred in numerous adventure films including the Emmy-nominated 'Alone on the Wall.'", height: "5'11", weight: 160, origin: "Sacramento, CA", preference: "Outdoor", profile_pic: "https://static.nationalgeographic.co.uk/files/styles/image_3200/public/01AlexHonnold.jpg?w=1600&h=900")
@@ -36,12 +37,21 @@ Community.create(name: "Dirt Bags")
 
 climber_ids = Climber.all.map{ |climber| climber.id }
 route_ids = Route.all.map{ |route| route.id }
-coummunity_ids = Community.all.map{ |community| community.id }
+community_ids = Community.all.map{ |community| community.id }
 
 
 Project.create(name: "Project Nose", climber_id: climber_ids.sample(), route_id: route_ids.sample())
+
 10.times{ Project.create(name: Faker::Hipster.word, climber_id: climber_ids.sample(), route_id: route_ids.sample()) }
 
 
-10.times{ Membership.create(climber_id: climber_ids.sample(), community_id: coummunity_ids.sample()) }
 
+10.times{ 
+  climber = climber_ids.sample()
+  community = community_ids.sample()
+  membership = Membership.all.any? {|single| 
+  climber == single.climber_id && community == single.community_id}
+    if membership == false
+      Membership.create(climber_id: climber, community_id: community)
+    end
+  }
