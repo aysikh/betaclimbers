@@ -15,7 +15,7 @@ Climber.create(name: "Jimmy Chin", experience: "Elite", birthyear: 1973, bio: "J
 
 #LOCATIONS
 yosemite = Location.create(name: "Yosemite", rock_type: "Granite", approach: "Large parking lot, but El Capitan is about 1 mile in.", popularity: "Gets busy in the evenings", picture: "https://www.arcgis.com/sharing/rest/content/items/9066fbfc3ef84b10b33d6eded94a154a/resources/1572144017412.jpeg?w=2805")
-new_river_gorge = Location.create(name: "New River Gorge", rock_type: "Sandstone", approach: "Tons of parking with climbing within a mile, and some crags further away", popularity: "Other climbers present year-round but can be busy during peak season with possible lines", picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Faceraft.com%2Fproduct%2Flower-gorge-rock-climb-rappel%2F&psig=AOvVaw2hNRcrT097xFxWvgWh11H2&ust=1601080216589000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiJqd6Gg-wCFQAAAAAdAAAAABAD")
+new_river_gorge = Location.create(name: "New River Gorge", rock_type: "Sandstone", approach: "Tons of parking with climbing within a mile, and some crags further away", popularity: "Other climbers present year-round but can be busy during peak season with possible lines", picture: "https://aceraft.com/wp-content/uploads/2019/05/lower-new-river-gorge-climb-6.jpg")
 
 
 location_ids = Location.all.map{ |location| location.id }

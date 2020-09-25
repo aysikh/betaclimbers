@@ -1,0 +1,13 @@
+<%= form_for @location do |f| %>
+  <%= f.label "Name:" %><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.label "Rock Type:" %><br>
+  <%= f.text_field :rock_type %><br><br>
+  <%= f.label "Approach:" %><br>
+  <%= f.text_area :approach %><br><br>
+  <%= f.label "Popularity:" %><br>
+  <%= f.text_field :popularity %><br><br>
+  <%= f.label "Picture:" %><br>
+  <%= f.text_area :picture %><br><br>
+  <%= f.submit %>
+<% end %>

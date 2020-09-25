@@ -1,0 +1,10 @@
+
+<h1>Locations</h1>
+
+<% @locations.each do |location| %>
+  <p><img src="<%= location.picture %>" alt="A picture of the location <%= location.name %>%" height="40%" width="40%"></p>
+  <%= link_to location.name, location_path(location) %>
+<% end %>
+
+<br><br><%= button_to "Add a New Location", new_location_path, method: "get" %>
+

@@ -1,0 +1,13 @@
+
+<p><img src="<%= @location.picture %>" alt="A picture of the location <%= @location.name %>" height="40%" width="40%"></p>
+
+<h1><%= @location.name %></h1>
+
+<h3>Rock Type: <%= @location.rock_type %></h3>
+<h3>Approach: <%= @location.approach %></h3>
+<h3>Popularity: <%= @location.popularity %></h3>
+
+<%= button_to "Edit", edit_location_path(@location), method: "get" %>
+
+<%= render partial: "partials/footer" %>
+

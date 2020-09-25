@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    #before_action above pasees the @location
   end
 
   def new
@@ -22,11 +23,11 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    render :edit
+    #before_action above pasees the @location
   end
 
   def update
-    @location = Location.update(location_params)
+    @location.update(location_params)
     if @location.save
       redirect_to location_path(@location)
     else
@@ -41,11 +42,11 @@ class LocationsController < ApplicationController
   private
 
   def find_location
-    params.require(:location).permit(:name, :rock_type, :approach, :popularity, :picture)
+    @location = Location.find(params[:id])
   end
-
+  
   def location_params
-    id = Location.find(params[:id])
+    params.require(:location).permit(:name, :rock_type, :approach, :popularity, :picture)
   end
   
 end
