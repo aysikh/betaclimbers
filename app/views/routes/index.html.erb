@@ -4,3 +4,5 @@
   <h3><%= link_to route.name, route_path(route) %></h3>
     <p>Location: <%= link_to route.location.name, location_path(route.location) %></p>
 <% end %>
+
+<%= button_to "Create New Route", new_route_path, method: "get" %>

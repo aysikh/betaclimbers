@@ -52,7 +52,7 @@ Project.create(name: "Project Nose", climber_id: climber_ids.sample(), route_id:
   community = community_ids.sample()
   membership = Membership.all.any? {|single| 
   climber == single.climber_id && community == single.community_id}
-    if membership == false
-      Membership.create(climber_id: climber, community_id: community)
-    end
-  }
+  if membership == false
+    Membership.create(climber_id: climber, community_id: community)
+  end
+}

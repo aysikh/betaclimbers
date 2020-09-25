@@ -1,6 +1,6 @@
-<%= render partial: "partials/footer" %>
+
 <h1>New Location</h1>
 
-<%= render partial: "partials/location_input_form" %>
+<%= render partial: "location_input_form" %>
 
-<%= render partial: "partials/footer" %>
+<%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
