@@ -34,14 +34,14 @@ Community.create(name: "Speed Climber")
 Community.create(name: "Dirt Bags")
 
 
-climber_ids = Cimber.all.map{ |climber| climber.id }
+climber_ids = Climber.all.map{ |climber| climber.id }
 route_ids = Route.all.map{ |route| route.id }
 coummunity_ids = Community.all.map{ |community| community.id }
 
 
 Project.create(name: "Project Nose", climber_id: climber_ids.sample(), route_id: route_ids.sample())
-10.times{ Project.create(name: Faker::Hipster.word, climber_id: climber_ids.sample(), route_id: route_ids.sample())}
+10.times{ Project.create(name: Faker::Hipster.word, climber_id: climber_ids.sample(), route_id: route_ids.sample()) }
 
 
-Membership.create(climber_id: climber_ids.sample(), community_id: coummunity_ids.sample())
+10.times{ Membership.create(climber_id: climber_ids.sample(), community_id: coummunity_ids.sample()) }
 
