@@ -9,5 +9,12 @@
 
 <%= button_to "Edit", edit_location_path(@location), method: "get" %>
 
+<h2>Routes:</h2>
+
+<% @location.routes.each do |route| %>
+  <p><%= link_to route.name,  route_path(route)%></p>
+<% end %>
+
+
 <%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
 
