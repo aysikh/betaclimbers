@@ -36,22 +36,32 @@ new_river_gorge = Location.create(name: "New River Gorge", rock_type: "Sandstone
 location_ids = Location.all.map{ |location| location.id }
 #ROUTES
 def create_routes
-  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: yosemite.id)
-  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: yosemite.id)
+  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: yosemite.id)#url:https://lh3.googleusercontent.com/proxy/U9MdA8blJWQbIv7ZR6kdEN97Ykni4mFzpPqKRCr2JnhSEsNxbSnAvAZHevGbZynBvscFJfUl67KECfGwgujoEUihPJeZC-1uQ1vjvnXgw5pegX7zIF5ZRRn6CNZ7CQ4HcAtCK_SZ7MIgTS6caVJM2Ioq7a9_5G9ko6Ag9W-0f5ZUDqnDFft7Lo43pod9dljSCzOW0YD3Z1ITZqFq
+  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: yosemite.id)#url:https://lh3.googleusercontent.com/proxy/PPEw4r-8YV5p4EPbLIzB9jNyTjjTGnmvTkcS7FAkz8tT4YPrGjfVWsHutnlJ4FuB7OrS7_-AAPag0EVBbiDvvqXnRGGHK0X26GXKHaA4bpcB34NcNTcJi3HJon2Q8RM
+  #create time hyrum!
+  Route.create(name: "Fairview Dome", difficulty: "5.9", style: "Slab", location_id: yosemite.id)#url:https://lh3.googleusercontent.com/proxy/2LeI95KVbE3TcDBmcwAaTuxT2_6JJuAJi06suAaqh7VYK2DShjgj39dlJyuwND3-2AOhoWTfBCJdY0qXX59ETcFmICOYMCvJYnEtKcIc5iL235b96p8nncwCof_75PNsM5msw2oqGj_kUQ
+  Route.create(name: "Astroman", difficulty: "5.11c", style: "Big Wall", location_id: yosemite.id)#url:https://www.planetmountain.com/img/1/49797.jpg
+  Route.create(name: "Nut Cracker", difficulty: "5.8", style: "Slab", location_id: yosemite.id)#url:https://lh3.googleusercontent.com/proxy/A8gcJh3Jvprh5VNaxXCM9oEAtYekGmJqIsqxqzqQ31ZDxECw877ajdPn9PkihPNEVpYxNCDcRe91Ca6nVWmRS3R8qOb3kO5VT4QJWMOnXHiJrUAjKrGffdhNSNspPKq3
+  Route.create(name: "Muir Wall", difficulty: "5.12-5.14", style: "Big Wall", location_id: yosemite.id)#url:https://donsnotes.com/recreation/images/el-capitan-dawn-wall.jpg
+  Route.create(name: "East Butress, Middle Catheadral", difficulty: "5.9-5.10c", style: "Crack Climbing", location_id: yosemite.id)#url:https://cdn2.apstatic.com/photos/climb/112148583_large_1494323807.jpg
 end
 
 create_routes()
 
 
 #COMMUNITIES
-Community.create(name: "Top Roper")
-Community.create(name: "Lead Climber")
-Community.create(name: "Trad Climber")
-Community.create(name: "Free Solo-er")
-Community.create(name: "Boulderer")
-Community.create(name: "Competition Climber")
-Community.create(name: "Speed Climber")
-Community.create(name: "Dirt Bags")
+def create_communities
+  Community.create(name: "Top Roper")
+  Community.create(name: "Lead Climber")
+  Community.create(name: "Trad Climber")
+  Community.create(name: "Free Solo-er")
+  Community.create(name: "Boulderer")
+  Community.create(name: "Competition Climber")
+  Community.create(name: "Speed Climber")
+  Community.create(name: "Dirt Bags")
+end
+
+create_communities()
 
 
 climber_ids = Climber.all.map{ |climber| climber.id }
