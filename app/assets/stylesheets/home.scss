@@ -1,6 +1,15 @@
 body {
+  background-image: url("https://www.pictureeuropa.com/wp-content/uploads/2019/09/4k-nature-wallpapers-ultra-hd-51.jpg");
+  background-color: #cccccc;
+  height: 1000px; //adjust this to be dynamic
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 ul {
@@ -38,9 +47,9 @@ li a:hover:not(.active) {
 }
 
 .container {
-  position: fixed;
   right: 0;
-  margin: 100px;
+  margin-top: 10%;
+  margin-left: 38%;
   max-width: 275px;
   padding: 16px;
   background-color: white;
@@ -74,18 +83,6 @@ input[type=text]:focus, input[type=password]:focus {
 
 .btn:hover {
   opacity: 1;
-}
-
-
-.hero-image {
-  background-image: url("https://www.pictureeuropa.com/wp-content/uploads/2019/09/4k-nature-wallpapers-ultra-hd-51.jpg");
-  background-color: #cccccc;
-  height: 1000px; //adjust this to be dynamic
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
 }
 
 .hero-text {

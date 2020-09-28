@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :routes
   resources :climbers
-  get "/home", to: "home#home"
+  get "/", to: "home#home"
 
 end
