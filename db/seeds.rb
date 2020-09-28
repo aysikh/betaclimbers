@@ -28,22 +28,31 @@ create_climbers()
 
 
 #LOCATIONS
-Location.create(name: "Yosemite", rock_type: "Granite", approach: "Large parking lot, but El Capitan is about 1 mile in.", popularity: "Gets busy in the evenings", picture: "https://www.arcgis.com/sharing/rest/content/items/9066fbfc3ef84b10b33d6eded94a154a/resources/1572144017412.jpeg?w=2805")
-Location.create(name: "New River Gorge", rock_type: "Sandstone", approach: "Tons of parking with climbing within a mile, and some crags further away", popularity: "Other climbers present year-round but can be busy during peak season with possible lines", picture: "https://aceraft.com/wp-content/uploads/2019/05/lower-new-river-gorge-climb-6.jpg")
-
+Location.create(name: "Yosemite, California", rock_type: "Granite", approach: "Yosemite has some of the best weather of any climbing area in the United States. Because the climbs start from elevations between 2800-7500 feet, there is usually some place with good climbing temperatures throughout the year. Spring and fall have the best climbing weather. Summer cragging is usually uncomfortably hot but the long routes can be cool enough. Winter can have good climbing weather but can also have months of uniquely wet and severe Sierra storms.", popularity: "A dry November is our favorite time in Yosemite--perfect temps in the sun and no crowds.", picture: "https://www.arcgis.com/sharing/rest/content/items/9066fbfc3ef84b10b33d6eded94a154a/resources/1572144017412.jpeg?w=2805")
+Location.create(name: "New River Gorge, West Virginia", rock_type: "Sandstone", approach: "Tons of parking with climbing within a mile, and some crags further away", popularity: "Other climbers present year-round but can be busy during peak season with possible lines", picture: "https://aceraft.com/wp-content/uploads/2019/05/lower-new-river-gorge-climb-6.jpg")
+Location.create(name: "Great Falls, Virginia", rock_type: "Granite", approach: "No climbing is permitted in the historic canal cut. Routes range in length from 25 to 75 feet. Difficulty ranges from 5.0 up to the highest rated climbs at 5.14. Most of the routes are in the 5.5 to 5.9 range. All climbing is top-rope and no anchors may be drilled into the rock. Bring enough anchor material to have two independent anchor systems and allow about thirty feet of material from the edge to your anchor and you will be set to move to almost every climbing area in the park. The majority of the climbs are accessible via a walk down route except during periods of high water, above 4.5 on the Little Falls gauge. The river gauge reading is reported in the weather section of the Washington Post under the title 'River Stages.'",  popularity: "Weekend mornings and afternoon getes pretty popular. Weekdays are slow.", picture: "https://www.findyourchesapeake.com/globalimages/places_large/Great_Falls_Park.jpg")
+Location.create(name: "Red Rocks, Nevada", rock_type: "Sedimentary", approach: "Park at Kraft Mountain Parking Lot, then take the Kraft Mountain loop trail to the East / Northeast.  Hike for just a few minutes and the boulder will be on your left.  You'll only be able to see the huge crack once you are south of it (not as you are approaching it).", popularity: "The longer routes at Red Rocks are in the canyons and are usually too cold in the dead of winter. The best seasons are fall and spring, although south-facing routes are sometimes too hot (and therefore climbed even in midwinter). Current weather should be monitored, as cold or hot spells can change your plans. Even in warmer spring and fall periods, cold storms happen regularly, and the sport, short trad, and bouldering areas of Calico Basin are often perfect when the canyons are stormy or drying out after a storm.", picture: "https://www.vegas.com/media/tours/red-rock-tours/red-rock-canyon/2000x580_slot806_.jpg")
 
 
 location_ids = Location.all.map{ |location| location.id }
 
 #ROUTES
 def create_routes
-  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: Location.find_by(name: "Yosemite").id, picture: "https://lh3.googleusercontent.com/proxy/U9MdA8blJWQbIv7ZR6kdEN97Ykni4mFzpPqKRCr2JnhSEsNxbSnAvAZHevGbZynBvscFJfUl67KECfGwgujoEUihPJeZC-1uQ1vjvnXgw5pegX7zIF5ZRRn6CNZ7CQ4HcAtCK_SZ7MIgTS6caVJM2Ioq7a9_5G9ko6Ag9W-0f5ZUDqnDFft7Lo43pod9dljSCzOW0YD3Z1ITZqFq")
-  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: Location.find_by(name: "Yosemite").id, picture: "https://lh3.googleusercontent.com/proxy/PPEw4r-8YV5p4EPbLIzB9jNyTjjTGnmvTkcS7FAkz8tT4YPrGjfVWsHutnlJ4FuB7OrS7_-AAPag0EVBbiDvvqXnRGGHK0X26GXKHaA4bpcB34NcNTcJi3HJon2Q8RM")
-  Route.create(name: "Fairview Dome", difficulty: "5.9", style: "Slab", location_id: Location.find_by(name: "Yosemite").id, picture: "https://lh3.googleusercontent.com/proxy/2LeI95KVbE3TcDBmcwAaTuxT2_6JJuAJi06suAaqh7VYK2DShjgj39dlJyuwND3-2AOhoWTfBCJdY0qXX59ETcFmICOYMCvJYnEtKcIc5iL235b96p8nncwCof_75PNsM5msw2oqGj_kUQ")
-  Route.create(name: "Astroman", difficulty: "5.11c", style: "Big Wall", location_id: Location.find_by(name: "Yosemite").id, picture: "https://www.planetmountain.com/img/1/49797.jpg")
-  Route.create(name: "Nut Cracker", difficulty: "5.8", style: "Slab", location_id: Location.find_by(name: "Yosemite").id, picture: "https://lh3.googleusercontent.com/proxy/A8gcJh3Jvprh5VNaxXCM9oEAtYekGmJqIsqxqzqQ31ZDxECw877ajdPn9PkihPNEVpYxNCDcRe91Ca6nVWmRS3R8qOb3kO5VT4QJWMOnXHiJrUAjKrGffdhNSNspPKq3")
-  Route.create(name: "Muir Wall", difficulty: "5.12-5.14", style: "Big Wall", location_id: Location.find_by(name: "Yosemite").id, picture: "https://donsnotes.com/recreation/images/el-capitan-dawn-wall.jpg")
-  Route.create(name: "East Butress, Middle Catheadral", difficulty: "5.9-5.10c", style: "Crack Climbing", location_id: Location.find_by(name: "Yosemite").id, picture: "https://cdn2.apstatic.com/photos/climb/112148583_large_1494323807.jpg")
+  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/U9MdA8blJWQbIv7ZR6kdEN97Ykni4mFzpPqKRCr2JnhSEsNxbSnAvAZHevGbZynBvscFJfUl67KECfGwgujoEUihPJeZC-1uQ1vjvnXgw5pegX7zIF5ZRRn6CNZ7CQ4HcAtCK_SZ7MIgTS6caVJM2Ioq7a9_5G9ko6Ag9W-0f5ZUDqnDFft7Lo43pod9dljSCzOW0YD3Z1ITZqFq")
+  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/PPEw4r-8YV5p4EPbLIzB9jNyTjjTGnmvTkcS7FAkz8tT4YPrGjfVWsHutnlJ4FuB7OrS7_-AAPag0EVBbiDvvqXnRGGHK0X26GXKHaA4bpcB34NcNTcJi3HJon2Q8RM")
+  Route.create(name: "Fairview Dome", difficulty: "5.9", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/2LeI95KVbE3TcDBmcwAaTuxT2_6JJuAJi06suAaqh7VYK2DShjgj39dlJyuwND3-2AOhoWTfBCJdY0qXX59ETcFmICOYMCvJYnEtKcIc5iL235b96p8nncwCof_75PNsM5msw2oqGj_kUQ")
+  Route.create(name: "Astroman", difficulty: "5.11c", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://www.planetmountain.com/img/1/49797.jpg")
+  Route.create(name: "Nut Cracker", difficulty: "5.8", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/A8gcJh3Jvprh5VNaxXCM9oEAtYekGmJqIsqxqzqQ31ZDxECw877ajdPn9PkihPNEVpYxNCDcRe91Ca6nVWmRS3R8qOb3kO5VT4QJWMOnXHiJrUAjKrGffdhNSNspPKq3")
+  Route.create(name: "Muir Wall", difficulty: "5.12-5.14", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://donsnotes.com/recreation/images/el-capitan-dawn-wall.jpg")
+  Route.create(name: "East Butress, Middle Catheadral", difficulty: "5.9-5.10c", style: "Crack Climbing", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://cdn2.apstatic.com/photos/climb/112148583_large_1494323807.jpg")
+  
+  Route.create(name: "Aid Box", difficulty: "5.10-5.12c", style: "Slab", location_id: Location.find_by(name: "Great Falls, Virginia").id, picture: "https://image.thecrag.com/960x1446/fc/8b/fc8b86235a0df4706e5ab93cec03439ca8356281")
+
+  Route.create(name: "Plumber's Crack", difficulty: "5.9", style: "Crack", location_id: Location.find_by(name: "Red Rocks, Nevada").id, picture: "https://cdn2.apstatic.com/photos/climb/112791386_medium_1494315320.jpg")
+  Route.create(name: "Cut Your Teeth", difficulty: "5.5-5.8", style: "Slab", location_id: Location.find_by(name: "Red Rocks, Nevada").id, picture: "https://cdn2.apstatic.com/photos/climb/111453039_medium_1494362774.jpg")
+  Route.create(name: "Sport Chimney", difficulty: "5.8", style: "Crack", location_id: Location.find_by(name: "Red Rocks, Nevada").id, picture: "https://cdn2.apstatic.com/photos/climb/112789728_medium_1494315258.jpg")
+  Route.create(name: "Big Bad Wolf", difficulty: "5.8-5.9", style: "Big Wall", location_id: Location.find_by(name: "Red Rocks, Nevada").id, picture: "https://cdn2.apstatic.com/photos/climb/111492055_medium_1494364384_topo.jpg")
+
 end
 
 create_routes()
@@ -64,15 +73,31 @@ end
 create_communities()
 
 
+# climber_ids = Climber.all.map{ |climber| climber.id }
+# route_ids = Route.all.map{ |route| route.id }
+# community_ids = Community.all.map{ |community| community.id }
+# climber = climber_ids.sample()
+# community = community_ids.sample()
+# route = route_ids.sample()
+
 climber_ids = Climber.all.map{ |climber| climber.id }
 route_ids = Route.all.map{ |route| route.id }
 community_ids = Community.all.map{ |community| community.id }
+climber = climber_ids.sample()
+community = community_ids.sample()
+route = route_ids.sample()
 
+Project.create(name: "Project Nose", climber_id: climber, route_id: route)
 
-Project.create(name: "Project Nose", climber_id: climber_ids.sample(), route_id: route_ids.sample())
-
-10.times{ Project.create(name: Faker::Hipster.word, climber_id: climber_ids.sample(), route_id: route_ids.sample()) }
-
+30.times{ 
+  climber = climber_ids.sample()
+  route = route_ids.sample()
+  project = Project.all.any? {|single_project|
+  climber == single_project.climber_id && route == single_project.route_id}
+  if project == false
+    Project.create(name: Faker::Hipster.word, climber_id: climber, route_id: route) 
+  end
+}
 
 
 20.times{
@@ -84,3 +109,4 @@ Project.create(name: "Project Nose", climber_id: climber_ids.sample(), route_id:
     Membership.create(climber_id: climber, community_id: community)
   end
 }
+

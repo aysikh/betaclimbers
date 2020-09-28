@@ -3,24 +3,61 @@
 <%= image_tag("#{@climber.profile_pic}", height: "40%", width: "50%")%></center>
 <br><br>
 
-<h3>Experience:</h3>
-<%=@climber.experience%>
-<h3>Birthyear:</h3>
-<%=@climber.birthyear%>
-<h3>Height:</h3>
-<%=@climber.height%> 
-<h3>Weight:</h3>
-<%=@climber.weight%>
-<h3>Origin:</h3>
-<%=@climber.origin%>
-<h3>Climbing Preference:</h3>
-<%=@climber.preference%>
-<h3>Biography:</h3>
-<%=@climber.bio%>
-<br>
-<h3>Communities <%=@climber.name%> is in:</h3>
+<html>
+<head>
+<style>
+div.background {
+  background: url(klematis.jpg) repeat;
+  border: 2px solid black;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 3px solid black;
+  opacity: 0.9;
+}
+
+div.transbox p {
+  margin: 0%;
+  font-weight: bold;
+  color: #000000;
+}
+</style>
+</head>
+<body>
+<div class="background">
+  <div class="transbox">
+
+<h2>Experience:</h2>
+<h5><%=@climber.experience%></h5>
+<h2>Birthyear:</h2>
+<h5><%=@climber.birthyear%></h5>
+<h2>Height:</h2>
+<h5><%=@climber.height%> </h5>
+<h2>Weight:</h2>
+<h5><%=@climber.weight%></h5>
+<h2>Origin:</h2>
+<h5><%=@climber.origin%></h5>
+<h2>Climbing Preference:</h2>
+<h5><%=@climber.preference%></h5>
+<h2>Biography:</h2>
+<h5><p><%=@climber.bio%></p></h5>
+<br><br>
+<h2>Current Projects:</h2> 
+<%@climber.routes.each do |route|%> 
+  <h5><li><div><%= link_to route.name, route_path(route)%></div> </li></h5>
+  <%end%>
+  <br><br>
+<h2>Communities <%=@climber.name%> is in:</h2>
 <%@climber.communities.each do |community|%>
-  <li><%= link_to community.name, community_path(community)%></li>
+  <h5><li><%= link_to community.name, community_path(community)%></li></h5>
   <%end%>
 <br><br>
-<h4><%= link_to "Back to All Climbers", climbers_path%></h4>
+<h5><%= link_to "Back to All Climbers", climbers_path%></h5>
+
+</div>
+</div>
+
+</body>
+</html>
