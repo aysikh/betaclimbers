@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :routes
   resources :climbers
-  get "/", to: "home#home"
 
+  resources :users, only: [:new, :show, :create]
+  get "/", to: "home#home"
 end
