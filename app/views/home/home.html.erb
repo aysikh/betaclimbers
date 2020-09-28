@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
+<body>
 <div class="home-body">
 <ul>
   <li style="float:right"><a class="user" href="users/new">SIGN UP</a></li>
 </ul>
 
-</body>
-</html>
-
-<form action="/action_page.php" class="container">
-  <h1>LOGIN</h1>
-
-  <label for="email"><b>EMAIL</b></label>
-  <input type="text" placeholder="Enter Email" name="email" required>
-
-  <label for="psw"><b>PASSWORD</b></label>
-  <input type="password" placeholder="Enter Password" name="psw" required>
-
-  <button type="submit" class="btn">SUBMIT</button>
-</form>
+<div class="container">
+  
+  <h2>Login</h2>
+  <p><%= flash.now[:no_user] %></p>
+  <%= form_tag users_login_path do %>
+      <b><%= label_tag :username %></b>
+      <%= text_field_tag :username %>
+      <b><%= label_tag :password %></b>
+      <%= password_field_tag :password %>
+      <div class="btn"><%= submit_tag "Login" %></div>
+  <% end %>
+</div>
 
 </div>
 </body>
-</head>
+
 </html>
 
