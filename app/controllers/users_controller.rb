@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if user
       redirect_to climbers_path
     else
-      flash.now[:no_user] = "That user does not exist"
+      flash[:no_user] = "That user does not exist"
       redirect_to "/"
     end
 

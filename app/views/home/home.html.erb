@@ -3,25 +3,25 @@
 <head>
 </head>
 <body>
-<div class="home-body">
-<ul>
-  <li style="float:right"><a class="user" href="users/new">SIGN UP</a></li>
-</ul>
+  <div class="home-body">
+    <ul>
+      <li style="float:right"><a class="user" href="users/new">SIGN UP</a></li>
+    </ul>
 
-<div class="container">
-  
-  <h2>Login</h2>
-  <p><%= flash.now[:no_user] %></p>
-  <%= form_tag users_login_path do %>
-      <b><%= label_tag :username %></b>
-      <%= text_field_tag :username %>
-      <b><%= label_tag :password %></b>
-      <%= password_field_tag :password %>
-      <div class="btn"><input type="submit" value="Submit"><%# submit_tag "Login" %></div>
-  <% end %>
-</div>
+    <div class="container">
+      
+      <h2>Login</h2>
+      <p><%= flash[:no_user] %></p>
+      <%= form_tag users_login_path do %>
+        <b><%= label_tag :username %></b>
+        <%= text_field_tag :username %>
+        <b><%= label_tag :password %></b>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Login", class: "btn" %>
+      <% end %>
+    </div>
 
-</div>
+  </div>
 </body>
 
 </html>
