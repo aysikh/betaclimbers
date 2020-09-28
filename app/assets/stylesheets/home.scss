@@ -11,7 +11,7 @@ body {
 }
 
 .hero-image {
-  background-image: url("https://i.pinimg.com/originals/3b/d5/a7/3bd5a78fede2560fc13ed5d55aa42538.jpg");
+  background-image: url("https://www.pictureeuropa.com/wp-content/uploads/2019/09/4k-nature-wallpapers-ultra-hd-51.jpg");
   background-color: #cccccc;
   height: 1000px; //adjust this to be dynamic
   background-position: center;
@@ -56,4 +56,44 @@ li a:hover:not(.active) {
 
 .active {
   background-color: #004f70;
+}
+
+
+.container {
+  position: fixed;
+  right: 0;
+  margin: 100px;
+  max-width: 275px;
+  padding: 16px;
+  background-color: white;
+  opacity: 0.85
+}
+
+input[type=text], input[type=password] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  text-align: center;
+  background-color: #00274a;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: crosshair; 
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
 }

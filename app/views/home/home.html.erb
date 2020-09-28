@@ -6,20 +6,24 @@
 <body>
 
 <ul>
-  <li><a href="climbers#index">Climbers</a></li>
-  <li><a href="communities#index">Communities</a></li>
-  <li><a href="routes#index">Routes</a></li>
-  <li><a href="locations#index">Locations</a></li>
-  <li style="float:right"><a class="active" href="#about">Log In</a></li>
+  <li style="float:right"><a class="active" href="#about">SIGN UP</a></li>
 </ul>
 
 <div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:60px">BETA-CLIMBERS</h1>
-    <h3 style="font-size:13px">welcome to the climb</h3>
-    <br><br><br><br>
-    <%= button_to "ENTER", climbers_path, method: :get, :class => "button" %>
-  </div>
+  <form action="/action_page.php" class="container">
+    <h1>LOGIN</h1>
+
+    <label for="email"><b>EMAIL</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>PASSWORD</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">SUBMIT</button>
+  </form>
+</div>
+
+
 </body>
 </html>
 
