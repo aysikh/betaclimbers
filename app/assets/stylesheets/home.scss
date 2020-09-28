@@ -47,6 +47,7 @@ li a:hover:not(.active) {
 }
 
 .container {
+  border-radius: 5%;
   right: 0;
   margin-top: 10%;
   margin-left: 38%;
@@ -54,6 +55,7 @@ li a:hover:not(.active) {
   padding: 16px;
   background-color: white;
   opacity: 0.85
+
 }
 
 input[type=text], input[type=password] {
