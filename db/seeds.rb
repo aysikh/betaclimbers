@@ -72,14 +72,6 @@ end
 
 create_communities()
 
-
-# climber_ids = Climber.all.map{ |climber| climber.id }
-# route_ids = Route.all.map{ |route| route.id }
-# community_ids = Community.all.map{ |community| community.id }
-# climber = climber_ids.sample()
-# community = community_ids.sample()
-# route = route_ids.sample()
-
 climber_ids = Climber.all.map{ |climber| climber.id }
 route_ids = Route.all.map{ |route| route.id }
 community_ids = Community.all.map{ |community| community.id }
