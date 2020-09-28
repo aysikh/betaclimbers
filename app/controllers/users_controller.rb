@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    
+    byebug
   end
 
   def process_login
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to climbers_path
     else
       flash.now[:no_user] = "That user does not exist"
-      render :locations_path
+      redirect_to "/"
     end
 
 
