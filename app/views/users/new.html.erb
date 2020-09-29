@@ -1,5 +1,12 @@
 <h1>Join the Community!</h1>
-
+<% if @user.errors %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<center>
 <%= form_for(@user) do |f| %> 
   <%= f.label :username%>
   <%= f.text_field :username%>
@@ -7,3 +14,4 @@
   <%= f.password_field :password%>
   <%= f.submit%>
 <%end%>
+</center>
