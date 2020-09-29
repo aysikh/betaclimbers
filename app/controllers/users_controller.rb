@@ -4,16 +4,24 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    byebug
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def login
-    byebug
+    
   end
 
   def process_login
     user = User.find_by(username: params[:username])
-    if user
-      redirect_to climbers_path
+    if user && user.authenticate(params[:password])
+      redirect_to user_path(user)
     else
       flash[:no_user] = "That user does not exist"
       redirect_to "/"
@@ -24,5 +32,12 @@ class UsersController < ApplicationController
 
   def logout
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
+
 
 end
