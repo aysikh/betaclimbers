@@ -9,9 +9,9 @@
 <center>
 <%= form_for (@climber) do |f| %> 
   <%= f.label :username%>
-  <%= f.text_field :username%>
+  <%= f.text_field :username, required: true%>
   <%= f.label :password%>
-  <%= f.password_field :password%>
+  <%= f.password_field :password, required: true%>
   <%= f.submit%>
 <%end%>
 
