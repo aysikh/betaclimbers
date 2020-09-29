@@ -1,9 +1,13 @@
 class Climber < ApplicationRecord
+  has_secure_password
+
   has_many :projects
   has_many :routes, through: :projects
   has_many :memberships
   has_many :communities, through: :memberships
 
+  # validates :username, presence: true, uniqueness: {case_sensitive: false, message: " must be unique."}
+  # validates :password, presence: true
   # validates :name, presence: true, uniqueness: {case_sensitive: false}
   # validates :experience, presence: true
   # validates :birthyear, presence: true

@@ -102,5 +102,5 @@ Project.create(name: "Project Nose", climber_id: climber, route_id: route)
   end
 }
 
-User.create(username: "amy", password: "chocolate")
+Climber.create(username: "amy", password: "chocolate")
 

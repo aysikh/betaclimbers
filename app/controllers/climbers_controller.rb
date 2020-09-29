@@ -10,6 +10,24 @@ class ClimbersController < ApplicationController
     @climber = Climber.find(id)
   end
 
+  def login
+
+  end
+
+  def process_login
+    climber = Climber.find_by(username: params[:username])
+    if climber && climber.authenticate(params[:password])
+      session[:climber_id] = climber.id
+      redirect_to climber_path(climber)
+    else
+      flash[:no_user] = "Username or password is incorrect."
+      redirect_to "/"
+    end
+  end
+
+  def logout
+  end
+
   def new
     @climber = Climber.new
   end
@@ -63,7 +81,7 @@ class ClimbersController < ApplicationController
   end
 
   def climber_params
-    params.require(:climber).permit(:username, :password_digest)
+    params.require(:climber).permit(:username, :password)
   end
 
   def profile_params

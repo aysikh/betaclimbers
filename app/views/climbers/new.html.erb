@@ -7,11 +7,12 @@
   </ul>
 <% end %>
 <center>
-<%= form_for(@climber) do |f| %> 
+<%= form_for (@climber) do |f| %> 
   <%= f.label :username%>
   <%= f.text_field :username%>
   <%= f.label :password%>
-  <%= f.password_field :password_digest%>
+  <%= f.password_field :password%>
   <%= f.submit%>
 <%end%>
+
 </center>

@@ -12,7 +12,7 @@
       
       <h1>LOG IN</h1>
       <p><%= flash[:no_user] %></p>
-      <%= form_tag users_login_path do %>
+      <%= form_tag climbers_login_path do %>
         <b><%= label_tag :username, "USERNAME:" %></b>
         <%= text_field_tag :username %>
         <b><%= label_tag :password, "PASSWORD:" %></b>
