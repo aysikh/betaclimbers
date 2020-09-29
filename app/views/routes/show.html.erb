@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
 <center>
 <p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
 <h1><%= @route.name %></h1>
+<br><br>
+
+<div class="ui labeled button" tabindex="0">
+
+<%= form_for @route do |f| %>
+  <div class="ui red button">
+  <i class="heart icon"></i>
+  <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
+  <a class="ui basic red left pointing label">
+  <%= @route.likes %> 
+  </a>
+  <% end %>
+
+  </div>
+  </div>
+<br><br>
+
 
 <h3>Difficulty: <%= @route.difficulty %></h3>
 <h3>Style: <%= @route.style %></h3>
@@ -14,3 +35,6 @@
 <br><br><br><br><br>
 <%= render partial: "partials/footer", locals: {table: "Routes", my_path: routes_path} %>
 </center>
+
+</head>
+</html>
