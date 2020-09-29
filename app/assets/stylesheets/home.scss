@@ -23,7 +23,7 @@ ul {
   top: 0;
 }
 
-.nav-bar {
+.home-body li {
   float: left;
   position: -webkit-sticky;
   position: sticky;
@@ -39,14 +39,14 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: rgba(21, 83, 155, 0.863);
 }
 
 .active {
   background-color: #004f70;
 }
 
-.container {
+.climber-container {
   border-radius: 5%;
   right: 0;
   margin-top: 10%;
@@ -72,7 +72,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for the submit button */
-.btn {
+.climber-btn {
   text-align: center;
   background-color: #00274a;
   color: white;
@@ -84,7 +84,7 @@ input[type=text]:focus, input[type=password]:focus {
   border-radius: 5px;
 }
 
-.btn:hover {
+.climber-btn:hover {
   opacity: 1;
 }
 
