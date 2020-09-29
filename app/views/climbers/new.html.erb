@@ -1,1 +1,17 @@
-<%= render partial: "climber_form", locals: {button_text: "Create a Profile!"}%>
+<h1>Join the Community!</h1>
+<% if @climber.errors %>
+  <ul>
+    <% @climber.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<center>
+<%= form_for(@climber) do |f| %> 
+  <%= f.label :username%>
+  <%= f.text_field :username%>
+  <%= f.label :password%>
+  <%= f.password_field :password_digest%>
+  <%= f.submit%>
+<%end%>
+</center>

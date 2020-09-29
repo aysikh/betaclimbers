@@ -16,6 +16,17 @@ class ClimbersController < ApplicationController
 
   def create
     @climber = Climber.new(climber_params)
+    if @climber.save
+      session[:climber_id] = @climber.id
+      redirect_to edit_climber_path(@climber)
+    else
+      render :new
+    end
+  end
+
+  def profile
+    @climber = Climber.find_by(id: session[:climber_id])
+    
     communities = params["climber"]["communities"]
     communities.shift
     communities.each do |community|
@@ -33,7 +44,7 @@ class ClimbersController < ApplicationController
   end
 
   def update
-    @climber.update(climber_params)
+    @climber.update(profile_params)
     if @climber.save
       redirect_to climber_path(@climber)
     else
@@ -52,6 +63,10 @@ class ClimbersController < ApplicationController
   end
 
   def climber_params
+    params.require(:climber).permit(:username, :password_digest)
+  end
+
+  def profile_params
     params.require(:climber).permit(:name, :experience, :birthyear, :bio, :height, :weight, :origin, :preference, :profile_pic)
   end
 

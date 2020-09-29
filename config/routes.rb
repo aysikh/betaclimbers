@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'users/create'
+  get 'climbers/new'
+  get 'climber/profile', to: 'climbers#profile'
   get 'users/login', to: 'users#login'
   post 'users/login', to: 'users#process_login'
   get 'users/logout', to: 'users#logout'
