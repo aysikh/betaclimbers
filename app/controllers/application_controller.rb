@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user
+  helper_method :current_user, :current_username
 
   def current_user
     return User.find_by(id: session[:user_id])
