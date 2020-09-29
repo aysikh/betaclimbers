@@ -10,4 +10,18 @@ class ApplicationController < ActionController::Base
     current_user.username
   end
 
+  def get_current_events
+    sample_climbers = []
+    while sample_climbers.count < 3
+      Cimber.all.each do |climber|
+        if climber.routes.any?
+          sample_climbers.push(climber)
+        end
+      end
+    end
+    return sample_climbers
+  end
+
+
+
 end

@@ -1,2 +1,5 @@
 <h1> Welcome You dirtbag!</h1>
 <p><%= "Just kidding your name is #{current_username}." %></p>
+<% get_current_events().each do |climber| %>
+  <%= climber %>
+<% end %>
