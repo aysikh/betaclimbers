@@ -1,12 +1,14 @@
 
 .climbers-body  {
-  background-image: url("https://wallup.net/wp-content/uploads/2015/12/244209-nature-landscape-blue-clear_sky-valley-mountain.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100vh;
+  background-image: url("https://i.pinimg.com/originals/04/ef/5e/04ef5e1743f2123165f573616c533885.jpg");
+  background-color: #cccccc;
+  height: 150vh;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
+  margin: 0;
 }
 
 body {
@@ -29,22 +31,4 @@ h2{
 
 h5{
   text-align: center;
-}
-
-div.background {
-  background: url(klematis.jpg) repeat;
-  border: 2px solid rgb(255, 255, 255);
-}
-
-div.transbox {
-  margin: 30px;
-  background-color: #ffffffd0;
-  border: 1px solid rgb(128, 170, 194);
-  opacity: 0.6;
-}
-
-div.transbox p {
-  margin: 5%;
-  font-weight: bold;
-  color: #000000;
 }
