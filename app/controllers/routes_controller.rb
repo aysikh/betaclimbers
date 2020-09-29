@@ -9,7 +9,7 @@ class RoutesController < ApplicationController
   end
 
   def new
-    @climber = Route.new
+    @route = Route.new
   end
 
   def create

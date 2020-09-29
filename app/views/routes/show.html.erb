@@ -1,4 +1,4 @@
-
+<center>
 <p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
 <h1><%= @route.name %></h1>
 
@@ -11,5 +11,6 @@
 <% @route.climbers.each do |climber| %>
   <p><%= link_to climber.name, climber_path(climber) %></p>
 <% end %>
-
+<br><br><br><br>
 <%= render partial: "partials/footer", locals: {table: "Routes", my_path: routes_path} %>
+</center>

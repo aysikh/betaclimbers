@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html>
+<body>
 <div class="climbers-body">
 <center><h1>What's the scoop on <%=@climber.name%>?</h1>
-<br><br>
-<%= image_tag("#{@climber.profile_pic}", height: "40%", width: "50%")%></center>
-<br><br>
+    <br><br>
+    <%= image_tag("#{@climber.profile_pic}", height: "40%", width: "50%")%></center>
+    <br><br>
 
-<head>
-
-</head>
-<body>
-<div class="background">
-  <div class="transbox">
-
-<h2>Experience:</h2>
-<h5><%=@climber.experience%></h5>
-<h2>Birthyear:</h2>
-<h5><%=@climber.birthyear%></h5>
-<h2>Height:</h2>
-<h5><%=@climber.height%> </h5>
-<h2>Weight:</h2>
-<h5><%=@climber.weight%></h5>
-<h2>Origin:</h2>
-<h5><%=@climber.origin%></h5>
-<h2>Climbing Preference:</h2>
-<h5><%=@climber.preference%></h5>
-<h2>Biography:</h2>
-<h5><p><%=@climber.bio%></p></h5>
-<br><br>
-<h2>Current Projects:</h2> 
-<%@climber.routes.each do |route|%> 
-  <h5><li><div><%= link_to route.name, route_path(route)%></div> </li></h5>
-  <%end%>
+  <h2>Experience:</h2>
+  <h5><%=@climber.experience%></h5>
+  <h2>Birthyear:</h2>
+  <h5><%=@climber.birthyear%></h5>
+  <h2>Height:</h2>
+  <h5><%=@climber.height%> </h5>
+  <h2>Weight:</h2>
+  <h5><%=@climber.weight%></h5>
+  <h2>Origin:</h2>
+  <h5><%=@climber.origin%></h5>
+  <h2>Climbing Preference:</h2>
+  <h5><%=@climber.preference%></h5>
+  <h2>Biography:</h2>
+  <h5><p><%=@climber.bio%></p></h5>
   <br><br>
-<h2>Communities <%=@climber.name%> is in:</h2>
-<%@climber.communities.each do |community|%>
-  <h5><li><%= link_to community.name, community_path(community)%></li></h5>
-  <%end%>
-<br><br>
-<h5><%= link_to "Back to All Climbers", climbers_path%></h5>
+  <h2>Current Projects:</h2> 
+  <%@climber.routes.each do |route|%> 
+    <h5><li><%= link_to route.name, route_path(route)%> </li></h5>
+    <%end%>
+    <br><br>
+  <h2>Communities <%=@climber.name%> is in:</h2>
+  <%@climber.communities.each do |community|%>
+    <h5><li><%= link_to community.name, community_path(community)%></li></h5>
+    <%end%>
+  <br><br>
+  <h2><%= link_to "Back to All Climbers", climbers_path%></h2>
 
-</div>
-</div>
 </div>
 </body>
 </html>
