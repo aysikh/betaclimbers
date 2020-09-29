@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'climbers/new'
   get 'climber/profile', to: 'climbers#profile'
-  # get 'users/login', to: 'users#login'
+  # get 'climbers/login', to: 'climbers#login'
   post 'climbers/login', to: 'climbers#process_login'
   get 'users/logout', to: 'users#logout'
   #trim this file down to just the routes you need upon refactoring
@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   resources :routes
   resources :climbers
 
-  resources :users, only: [:new, :show, :create]
   get "/", to: "home#home"
 end

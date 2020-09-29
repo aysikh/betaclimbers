@@ -8,21 +8,22 @@
       <li style="float:right"><a class="user" href="climbers/new">SIGN UP</a></li>
     </ul>
 
+
+
     <div class="climber-container">
       
       <h1>LOG IN</h1>
       <p><%= flash[:no_user] %></p>
-      <%= form_tag climbers_login_path do %>
-        <b><%= label_tag :username, "USERNAME:" %></b>
-        <%= text_field_tag :username, required: true %>
-        <b><%= label_tag :password, "PASSWORD:" %></b>
-        <%= password_field_tag :password %>
-        <%= submit_tag "CLIMB ON", class: "climber-btn" %>
-      <% end %>
+      <%= form_with url: climbers_login_path do |form| %> 
+        <%= form.label "username"%>
+        <%= form.text_field :username, required: true%>
+        <%= form.label "password"%>
+        <%= form.password_field :password, required: true%>
+        <%= form.submit "Climb On", :class => "climber-btn" %>
+      <%end%>
     </div>
 
   </div>
 </body>
 
 </html>
-
