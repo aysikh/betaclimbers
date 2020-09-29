@@ -1,5 +1,6 @@
 class RoutesController < ApplicationController
   before_action :find_route, only: [:show, :edit, :update, :delete]
+  skip_before_action :verify_authenticity_token
 
   def index
     @routes = Route.all 
@@ -25,12 +26,16 @@ class RoutesController < ApplicationController
   end
 
   def update
-    @route.update(route_params)
-    if @route.save
+    if params[:add_like]
+      @route.add_like
       redirect_to route_path(@route)
-    else
-      render :edit
     end
+    # @route.update(route_params)
+    # if @route.save
+    #   redirect_to route_path(@route)
+    # else
+    #   render :edit
+    # end
   end
 
   def destroy

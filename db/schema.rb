@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_181700) do
+ActiveRecord::Schema.define(version: 2020_09_29_213318) do
 
   create_table "climbers", force: :cascade do |t|
     t.string "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_09_28_181700) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "picture"
+    t.integer "likes", default: 0
     t.index ["location_id"], name: "index_routes_on_location_id"
   end
 

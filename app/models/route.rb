@@ -7,4 +7,9 @@ class Route < ApplicationRecord
   validates :difficulty, presence: true
   validates :style, presence: true
 
+  def add_like
+    self.likes += 1
+    self.save
+  end
+
 end
