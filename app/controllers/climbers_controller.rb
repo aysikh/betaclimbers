@@ -33,7 +33,6 @@ class ClimbersController < ApplicationController
   end
 
   def create
-    create_stage = 1
     @climber = Climber.new(climber_params)
     if @climber.save
       session[:climber_id] = @climber.id
@@ -44,7 +43,6 @@ class ClimbersController < ApplicationController
   end
 
   def profile
-    create_stage = 2
     @climber = Climber.find_by(id: session[:climber_id])
     
     communities = params["climber"]["communities"]
