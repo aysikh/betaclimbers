@@ -1,8 +1,9 @@
 
-.climbers-body  {
+body  {
   background-image: url("https://i.pinimg.com/originals/04/ef/5e/04ef5e1743f2123165f573616c533885.jpg");
   background-color: #cccccc;
   height: 150vh;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,18 +12,8 @@
   margin: 0;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
 h1{
   text-align: center;
-}
-
-img:hover {
-  opacity: 0.7;
 }
 
 h2{

@@ -1,13 +1,24 @@
+<% if @location.errors %>
+  <% @location.errors.full_messages.each do |error|%>
+    <%= error %>
+  <% end %>
+<% end %>
+
+
+<center>
+
 <%= form_for @location do |f| %>
-  <%= f.label "Name:" %><br>
+  <h3><%= f.label "Name:" %><br></h3>
   <%= f.text_field :name %><br><br>
-  <%= f.label "Rock Type:" %><br>
+  <h3><%= f.label "Rock Type:" %><br></h3>
   <%= f.text_field :rock_type %><br><br>
-  <%= f.label "Approach:" %><br>
+  <h3><%= f.label "Approach:" %><br></h3>
   <%= f.text_area :approach %><br><br>
-  <%= f.label "Popularity:" %><br>
+  <h3><%= f.label "Popularity:" %><br></h3>
   <%= f.text_field :popularity %><br><br>
-  <%= f.label "Picture:" %><br>
+  <h3><%= f.label "Picture:" %><br></h3>
   <%= f.text_area :picture %><br><br>
   <%= f.submit %>
 <% end %>
+
+</center>

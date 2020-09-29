@@ -1,3 +1,9 @@
+<% if @climber.errors %>
+  <% @climber.errors.full_messages.each do |error|%>
+    <%= error %>
+  <% end %>
+<% end %>
+
 <center>
 <h1>"It is not the mountain that we conquer, but ourselves."</h1>
 <br><br>

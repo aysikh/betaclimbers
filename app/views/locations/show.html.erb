@@ -1,4 +1,5 @@
 
+<center>
 <p><img src="<%= @location.picture %>" alt="A picture of the location <%= @location.name %>" height="40%" width="40%"></p>
 
 <h1><%= @location.name %></h1>
@@ -15,6 +16,6 @@
   <p><%= link_to route.name,  route_path(route)%></p>
 <% end %>
 
-
+<br><br><br>
 <%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
-
+</center>
