@@ -5,8 +5,13 @@
 <div class="topnav">
 <a class="active" href="/">Home</a>
 <a href="/climbers">Climbers</a>
+<a href="/communities">Communities</a>
 <a href="/locations">Locations</a>
 <a href="/routes">Routes</a>
+<% if !logged_in? %>
+<a style="float:right"><%= current_user.username %></a>
+<% end %>
+<a style="float:right" href="/">Log Out</a>
 </div>
 
 <center>

@@ -9,9 +9,11 @@ class ClimbersController < ApplicationController
     id = params[:id]
     @climber = Climber.find(id)
   end
+  
+  def welcome
+  end
 
   def login
-
   end
 
   def process_login
@@ -26,6 +28,8 @@ class ClimbersController < ApplicationController
   end
 
   def logout
+    session.clear 
+    redirect_to '/'
   end
 
   def new
