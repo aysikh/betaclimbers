@@ -5,7 +5,11 @@ module ClimbersHelper
   end
 
   def logged_in?
-    current_user.nil?
+    !current_user.nil?
   end
 
+  def check_session
+    puts session[:climber_id]
+  end
+  
 end

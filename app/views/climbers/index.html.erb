@@ -8,10 +8,10 @@
 <a href="/communities">Communities</a>
 <a href="/locations">Locations</a>
 <a href="/routes">Routes</a>
-<% if !logged_in? %>
-<a style="float:right"><%= current_user.username %></a>
-<% end %>
+
 <a style="float:right" href="/">Log Out</a>
+<a style="float:right"><%= current_user.username %></a>
+
 </div>
 
 <center>

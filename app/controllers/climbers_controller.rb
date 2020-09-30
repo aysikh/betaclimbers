@@ -80,6 +80,10 @@ class ClimbersController < ApplicationController
 
   private
 
+  def current_user
+    Climber.find(session[:climber_id])
+  end
+
   def find_climber
     @climber = Climber.find(params[:id])
   end
