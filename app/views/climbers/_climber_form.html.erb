@@ -5,7 +5,7 @@
 <% end %>
 
 <center>
-<h1>"It is not the mountain that we conquer, but ourselves."</h1>
+<h1 style="font-size:40px">"It is not the mountain that we conquer, but ourselves."</h1>
 <br><br>
 <%=form_for @climber do |f| %> 
   <%=f.label :name, "Name: " %><br>
@@ -34,6 +34,9 @@
   <br><br>
   <%=f.label :bio, "Biography: " %><br>
   <%=f.text_area :bio%> 
+  <br><br>
+  <%=f.label :profile_pic, "Profile Picture(URL): " %> <br>
+  <%=f.text_field :profile_pic%>
   <br><br>
   
   <%=f.submit "Submit" %> 

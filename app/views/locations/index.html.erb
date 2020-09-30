@@ -1,12 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
 
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+</div>
+<br><br>
 <center>
-<h1>Locations</h1>
-
+<center>
+<h1 style="font-size:45px">Locations</h1>
+<br>
 <% @locations.each do |location| %>
   <p><img src="<%= location.picture %>" alt="A picture of the location <%= location.name %>%" height="40%" width="40%"></p>
   <%= link_to location.name, location_path(location) %>
-<% end %>
+<br><br>
+  <% end %>
 
 <br><br><%= button_to "Add a New Location", new_location_path, method: "get" %>
 
 </center>
+</body>
+</html>

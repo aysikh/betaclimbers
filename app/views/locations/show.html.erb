@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
 
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+</div>
+<br><br>
 <center>
 <p><img src="<%= @location.picture %>" alt="A picture of the location <%= @location.name %>" height="40%" width="40%"></p>
 
@@ -19,3 +29,7 @@
 <br><br><br>
 <%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
 </center>
+
+
+</body>
+</html>

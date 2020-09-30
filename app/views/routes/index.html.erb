@@ -1,10 +1,29 @@
-<center>
-<h1>Routes</h1>
+<!DOCTYPE html>
+<html>
+<body>
 
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+</div>
+<br><br>
+<center>
+
+<center>
+<h1 style="font-size:45px">Routes</h1>
+<br>
 <% @routes.each do |route| %>
   <h3><%= link_to route.name, route_path(route) %></h3>
     <p>Location: <%= link_to route.location.name, location_path(route.location) %><br><br></p>
-<% end %>
+<br><br>
+    <% end %>
+
+<br><br>
 
 <%= button_to "Create New Route", new_route_path, method: "get" %>
 </center>
+
+</html>
+</body>

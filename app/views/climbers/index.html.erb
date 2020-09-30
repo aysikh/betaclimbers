@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+</div>
+
+<center>
 <div class="climbers-body">
 
-<h1> All of the Climbers </h1>
 <ul> 
 <% @climbers.all.each do |climber| %> 
   <li><%= link_to climber.name, climber_path(climber)%></li>
@@ -11,8 +19,6 @@
 </ul>
 <br>
 <br>
-<h2><%= link_to "Create A Profile!", new_climber_path%></h2>
-
 </div>
 </body>
 </html>

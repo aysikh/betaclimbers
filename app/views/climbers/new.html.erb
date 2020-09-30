@@ -1,4 +1,5 @@
 <h1>Join the Community!</h1>
+<br>
 <% if @climber.errors %>
   <ul>
     <% @climber.errors.full_messages.each do |error| %>
@@ -6,13 +7,19 @@
     <% end %>
   </ul>
 <% end %>
+
 <center>
 <%= form_for (@climber) do |f| %> 
-  <%= f.label :username%>
-  <%= f.text_field :username, required: true%>
-  <%= f.label :password%>
+  <%= f.label :username%><br>
+  <%= f.text_field :username, required: true%><br><br>
+  <%= f.label :password%><br>
   <%= f.password_field :password, required: true%>
+  <br>
   <%= f.submit%>
 <%end%>
-
+<br><br>
+<button lass="arrow circle left icon">
+  <i class="arrow circle left icon"></i>
+  <%= link_to "Go Back", '/'%> 
+</button>
 </center>
