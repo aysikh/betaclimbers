@@ -2,17 +2,9 @@
 <html>
 <body>
 
-<div class="topnav">
-<a class="active" href="/">Home</a>
-<a href="/climbers">Climbers</a>
-<a href="/communities">Communities</a>
-<a href="/locations">Locations</a>
-<a href="/routes">Routes</a>
+<%= render partial: "partials/navbar" %> 
 
-<a style="float:right" href="climbers/logout">Log Out</a>
-<a style="float:right"><%= current_user.username %></a>
-
-</div><center>
+<center>
 <h1>Welcome <%=current_user.name%></h1>
 <% if logged_in?%> 
   <h4> You are currently logged in as, <%= current_user.username%> </h4>
