@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user, :current_username, :get_the_weather
+  helper_method :current_user, :current_username, :get_the_weather, :get_current_events
 
   def current_user
-    return User.find_by(id: session[:user_id])
+    user_session = Climber.find(session[:climber_id])
+    if user_session == nil
+      redirect_to '/'
+    else
+      return user_session
+    end
   end
 
   def current_username
@@ -11,12 +16,11 @@ class ApplicationController < ActionController::Base
   end
 
   def get_current_events
-    sample_climbers = []
-    while sample_climbers.count < 3
-      Cimber.all.each do |climber|
-        if climber.routes.any?
-          sample_climbers.push(climber)
-        end
+    sample_climbers = {}
+    Climber.all.sample(4).each do |climber|
+      sample_climbers[climber.name] = []
+      climber.routes.each do |route|
+        sample_climbers[climber.name] << route.name
       end
     end
     return sample_climbers

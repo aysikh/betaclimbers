@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'climber/profile', to: 'climbers#profile'
   # get 'climbers/login', to: 'climbers#login'
   post 'climbers/login', to: 'climbers#process_login'
-  get 'users/logout', to: 'users#logout'
+  get 'climbers/logout', to: 'climbers#logout'
+  get 'climbers/welcome', to: 'climbers#welcome'
   #trim this file down to just the routes you need upon refactoring
   resources :memberships
   resources :communities

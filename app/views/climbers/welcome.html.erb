@@ -1,7 +1,39 @@
-<h1>Welcome <%=@climber.name%> </h1>
-<br><Br>
+<!DOCTYPE html>
+<html>
+<body>
 
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/communities">Communities</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+
+<a style="float:right" href="climbers/logout">Log Out</a>
+<a style="float:right"><%= current_user.username %></a>
+
+</div><center>
+<h1>Welcome <%=current_user.name%></h1>
 <% if logged_in?%> 
-  <h1> You are logged in as, <%= current_user.username%> </h1>
+  <h4> You are currently logged in as, <%= current_user.username%> </h4>
   <%end%>
-  
+<br><br>
+<h1>Your projects: </h1>
+
+</center>
+<br><br>
+<center>
+<h1> Check out who's crushing it! </h1>
+<br><br>
+<% get_current_events.each do |k, v| %> 
+  <%= k %> is climbing: 
+  <br><br>
+  <%v.each do |single_route| %> 
+  <%= single_route%>
+  <br>
+  <%end%>
+  <br><br>
+<%end%>
+</center>
+</body>
+</html>

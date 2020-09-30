@@ -11,6 +11,7 @@ class ClimbersController < ApplicationController
   end
   
   def welcome
+
   end
 
   def login
@@ -20,7 +21,7 @@ class ClimbersController < ApplicationController
     climber = Climber.find_by(username: params[:username])
     if climber && climber.authenticate(params[:password])
       session[:climber_id] = climber.id
-      redirect_to climber_path(climber)
+      redirect_to climbers_welcome_path(climber)
     else
       flash[:no_user] = "Username or password is incorrect."
       redirect_to "/"
@@ -80,9 +81,6 @@ class ClimbersController < ApplicationController
 
   private
 
-  def current_user
-    Climber.find(session[:climber_id])
-  end
 
   def find_climber
     @climber = Climber.find(params[:id])
