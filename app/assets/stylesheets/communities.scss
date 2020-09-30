@@ -1,3 +1,33 @@
 // Place all the styles related to the Communities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.community-body{
+  background-image: url("https://wallpapercave.com/wp/wp4853028.jpg");
+  background-color: #cccccc;
+  height: 100vh; //adjust this to be dynamic
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.community-index-body{
+background-image: url("https://wallpapercave.com/wp/wp4853030.jpg");
+background-color: #cccccc;
+height: 100vh; //adjust this to be dynamic
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+position: relative;
+margin: 0;
+font-family: Helvetica, Arial, sans-serif;
+text-align: center;
+}
