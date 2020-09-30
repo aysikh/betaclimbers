@@ -61,3 +61,5 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'semantic-ui-rails'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
+gem 'rest-client'
