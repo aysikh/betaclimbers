@@ -6,10 +6,11 @@ class LocationsController < ApplicationController
   end
 
   def show
-    
     #before_action above pasees the @location
-    @api = RestClient.get("http://api.weatherstack.com/current?access_key=ff84e265083ca3b8a1a2a6c945f602ef&query=18,47&units=f")
-    @parsed = JSON.parse(@api)
+
+    @api = get_the_weather()["current"]
+    
+    # @parsed = JSON.parse(@api)
   end
 
   def new

@@ -17,6 +17,10 @@
 
 <h1><%= @location.name %></h1>
 
+
+<%= render partial: "location_weather_display" %>
+
+
 <h3>Rock Type: <%= @location.rock_type %></h3>
 <h3>Approach: <%= @location.approach %></h3>
 <h3>Popularity: <%= @location.popularity %></h3>

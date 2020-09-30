@@ -1,3 +1,5 @@
+
+
 .location-body  {
   background-image: url("https://free4kwallpapers.com/uploads/originals/2020/08/03/snow-coated-rocky-mountains-wallpaper.jpg");
   background-color: #cccccc;
@@ -48,4 +50,13 @@ overflow: scroll;
 .topnav a.active {
   background-color: #000000;
   color: white;
+}
+
+.weather-display {
+  width: 15rem;
+  opacity: .8;
+}
+
+#weather-title {
+  margin-top: 0;
 }
