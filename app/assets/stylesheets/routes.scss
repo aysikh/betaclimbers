@@ -1,9 +1,31 @@
 // Place all the styles related to the Routes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.route-body {
+  background-image: url("https://papers.co/wallpaper/papers.co-nj63-mountain-simple-fall-snow-flare-36-3840x2400-4k-wallpaper.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  margin: 0;
+  }
 
-
-
+.route-index-body {
+  background-image: url("https://wallup.net/wp-content/uploads/2016/01/285053-landscape-mountain-snow.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  margin: 0;
+  }
 
 .topnav {
   overflow: hidden;

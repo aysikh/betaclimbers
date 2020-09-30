@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<body>
+<div class="topnav">
+<a class="active" href="/">Home</a>
+<a href="/climbers">Climbers</a>
+<a href="/locations">Locations</a>
+<a href="/routes">Routes</a>
+</div>
+<div class="route-body">
 <center>
-<p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
 <h1><%= @route.name %></h1>
+<br><br>
+<p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
 <br><br>
 
 <div class="ui labeled button" tabindex="0">
@@ -36,5 +44,7 @@
 <%= render partial: "partials/footer", locals: {table: "Routes", my_path: routes_path} %>
 </center>
 
+</div>
+</body
 </head>
 </html>

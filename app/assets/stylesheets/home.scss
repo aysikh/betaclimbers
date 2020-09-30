@@ -59,7 +59,7 @@ li a:hover:not(.active) {
   margin-top: 5%;
   margin-left: 40%;
   max-width: 275px;
-  padding: 16px;
+  padding: 20px;
   background-color: white;
   opacity: 0.85
 
@@ -81,11 +81,12 @@ input[type=text]:focus, input[type=password]:focus {
 /* Set a style for the submit button */
 .climber-btn {
   text-align: center;
-  background-color: #003564;
+  background-color: #012d52;
   color: white;
   border: none;
   cursor: crosshair; 
-  width: 86.5%;
+  width: 220px;
+  height: 40px;
   opacity: 0.9;
   border-radius: 5px;
 }

@@ -8,6 +8,7 @@
 <a href="/locations">Locations</a>
 <a href="/routes">Routes</a>
 </div>
+<div class="location-body">
 <br><br>
 <center>
 <p><img src="<%= @location.picture %>" alt="A picture of the location <%= @location.name %>" height="40%" width="40%"></p>
@@ -30,6 +31,6 @@
 <%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
 </center>
 
-
+</div>
 </body>
 </html>

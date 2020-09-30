@@ -1,9 +1,28 @@
 .location-body  {
-  background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/11/mountains-snow-sky-night-4k_1541116578.jpg");
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2020/08/03/snow-coated-rocky-mountains-wallpaper.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
+  position: relative;
+  margin: 0;
 }
 
+.location-index-body {
+background-image: url("https://img1.goodfon.com/wallpaper/nbig/9/89/gory-sneg-oblaka-cherno-belaya.jpg");
+background-color: #cccccc;
+height: 150vh;
+width: 100%;
+background-position: center;
+background-repeat: repeat;
+background-size: cover;
+background-attachment: fixed;
+position: absolute;
+margin: 0;
+}
 
 .topnav {
   overflow: hidden;

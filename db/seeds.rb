@@ -39,11 +39,11 @@ location_ids = Location.all.map{ |location| location.id }
 
 #ROUTES
 def create_routes
-  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/U9MdA8blJWQbIv7ZR6kdEN97Ykni4mFzpPqKRCr2JnhSEsNxbSnAvAZHevGbZynBvscFJfUl67KECfGwgujoEUihPJeZC-1uQ1vjvnXgw5pegX7zIF5ZRRn6CNZ7CQ4HcAtCK_SZ7MIgTS6caVJM2Ioq7a9_5G9ko6Ag9W-0f5ZUDqnDFft7Lo43pod9dljSCzOW0YD3Z1ITZqFq")
-  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/PPEw4r-8YV5p4EPbLIzB9jNyTjjTGnmvTkcS7FAkz8tT4YPrGjfVWsHutnlJ4FuB7OrS7_-AAPag0EVBbiDvvqXnRGGHK0X26GXKHaA4bpcB34NcNTcJi3HJon2Q8RM")
-  Route.create(name: "Fairview Dome", difficulty: "5.9", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/2LeI95KVbE3TcDBmcwAaTuxT2_6JJuAJi06suAaqh7VYK2DShjgj39dlJyuwND3-2AOhoWTfBCJdY0qXX59ETcFmICOYMCvJYnEtKcIc5iL235b96p8nncwCof_75PNsM5msw2oqGj_kUQ")
-  Route.create(name: "Astroman", difficulty: "5.11c", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://www.planetmountain.com/img/1/49797.jpg")
-  Route.create(name: "Nut Cracker", difficulty: "5.8", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/A8gcJh3Jvprh5VNaxXCM9oEAtYekGmJqIsqxqzqQ31ZDxECw877ajdPn9PkihPNEVpYxNCDcRe91Ca6nVWmRS3R8qOb3kO5VT4QJWMOnXHiJrUAjKrGffdhNSNspPKq3")
+  Route.create(name: "The Nose", difficulty: "5.14a", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://d1vs4ggwgd7mlq.cloudfront.net/wp-content/uploads/Article-Images/Accident-Reports/AAC_El_Cap_Nose_Accidents_2.png")
+  Route.create(name: "Snake Dike", difficulty: "5.7R", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://live.staticflickr.com/2558/3729529737_30af464e95_b.jpg")
+  Route.create(name: "Fairview Dome", difficulty: "5.9", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://cdn2.apstatic.com/photos/climb/108397802_medium_1494280860.jpg")
+  Route.create(name: "Astroman", difficulty: "5.11c", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://www.planetmountain.com/itinerari/files/Rock/materiale/big/astroman.jpg")
+  Route.create(name: "Nut Cracker", difficulty: "5.8", style: "Slab", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://lh3.googleusercontent.com/proxy/OJOlDUb9cTAZ0eY_6Fb1nmXygrazCCqsYnirGaSpsik9hz9ULDJPkP_NBXu-8jieb5IkTZQQiXkHNGgEcHMqB86-X_RcTYJrPdRrdIqU5wcdntnWJdb0bsXb2f348o2E")
   Route.create(name: "Muir Wall", difficulty: "5.12-5.14", style: "Big Wall", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://donsnotes.com/recreation/images/el-capitan-dawn-wall.jpg")
   Route.create(name: "East Butress, Middle Catheadral", difficulty: "5.9-5.10c", style: "Crack Climbing", location_id: Location.find_by(name: "Yosemite, California").id, picture: "https://cdn2.apstatic.com/photos/climb/112148583_large_1494323807.jpg")
   
