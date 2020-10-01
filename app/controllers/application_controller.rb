@@ -46,7 +46,6 @@ class ApplicationController < ActionController::Base
       # flash[:notice] = "You must be logged in."
     end
   end
-
   # def flash_class(level)
   #   case level
   #   when "success" then "ui blue message"
