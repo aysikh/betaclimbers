@@ -10,19 +10,30 @@
 <a href="/routes">Routes</a>
 <a style="float:right" class="active" href="/">Log Out</a>
 </div>
+
 <div class="location-index-body">
-<center>
-<h1 style="font-size:45px">Locations</h1>
-<br>
-<% @locations.each do |location| %>
-  <p><img src="<%= location.picture %>" alt="A picture of the location <%= location.name %>%" height="40%" width="40%"></p>
-  <%= link_to location.name, location_path(location) %>
-<br><br>
-  <% end %>
+  <center>
+  <h1 style="font-size:45px">Locations</h1>
+  <br>
+  <div class="location-index-list">
+  
+    <% @locations.each do |location| %>
+      <a href="/locations/<%= location.id %>" class="location-index-link">
+      <img src="<%= location.picture %>" class="location-index-img" alt="A picture of the location <%= location.name %>" height="50%" width="50%">
+      <%= location.name %>
+      </a>
+      <br>
+      <br>
+    <% end %>
+  
 
-<br><br><%= button_to "Add a New Location", new_location_path, method: "get" %>
-
-</center>
+    <br>
+    <br>
+    <%= button_to "Add a New Location", new_location_path, method: "get" %>
+  </div>
+  <%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
+  </center>
 </div>
+
 </body>
 </html>
