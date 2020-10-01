@@ -1,0 +1,9 @@
+<div class="ui inverted segment weather-display">
+<div class="card text-white bg-dark mb-3">
+  <div class="card-header"><img src="<%= @api["weather_icons"][0] %>" alt="A picture of the location <%= current_user.origin %>"></div>
+  <h5 id="weather-title">Current Weather</h5>
+  <p><%= @api["weather_descriptions"][0] %></p>
+  <p><%= @api["temperature"] %>˚F</p>
+  <p>The humidity is <%= @api["humidity"] %>%.</p>
+</div>
+</div>

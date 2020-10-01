@@ -4,17 +4,28 @@
 
 <%= render partial: "partials/navbar" %> 
 
+<div class="welcome-body">
+<div class= "welcome-body-text">
 <center>
-<h1>Welcome <%=current_user.name%></h1>
+<h1>Welcome back <%=current_user.name%>!</h1>
 <% if logged_in?%> 
   <h4> You are currently logged in as, <%= current_user.username%> </h4>
   <%end%>
 <br><br>
+<h1>What's the weather like in <%=current_user.origin%>?</h1>
+<br>
+<%= render partial: "climber_weather_display" %>
+<br><br>
 <h1>Your projects: </h1>
+<% current_user.routes.each do |route|%> 
+<li><%= link_to route.name, route_path(route)%> </li>
+<%end%>
 
+<br><br>
 </center>
 <br><br>
 <center>
+
 <h1> Check out who's crushing it! </h1>
 <br><br>
 <% get_current_events.each do |k, v| %> 
@@ -26,6 +37,9 @@
   <%end%>
   <br><br>
 <%end%>
+
+</div>
+</div>
 </center>
 </body>
 </html>
