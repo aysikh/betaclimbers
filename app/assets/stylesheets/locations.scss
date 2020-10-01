@@ -1,33 +1,3 @@
-//This file affects all location paths
-//So the identifier may not be listed on the page you are editing
-//but is listed elsewhere
-
-
-//NAVBAR
-.topnav {
-  overflow: hidden;
-  background-color: #00224e;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #000000;
-  color: white;
-}
-
 
 //INDEX PAGE
 .location-index-img {

@@ -7,7 +7,7 @@
 <div class="climbers-body">
 <center><h1>What's the scoop on <%=@climber.name%>?</h1>
     <br><br>
-    <%= image_tag("#{@climber.profile_pic}", height: "30%", width: "45%")%></center>
+    <%= image_tag("#{@climber.profile_pic}", class: "climber-show-image", height: "30%", width: "45%")%></center>
     <br><br>
 
 <center><button class="edit outline icon">
@@ -17,40 +17,41 @@
 <br><br>
 
 <div class="ui divider"></div>
-<div class="ui two column vertically padded grid">
-  <div class="column">
-    <p><center>
-    <h2>Experience:</h2>
-    <h5><%=@climber.experience%></h5>
-    <h2>Birthyear:</h2>
-    <h5><%=@climber.birthyear%></h5>
-    <h2>Height:</h2>
-    <h5><%=@climber.height%> </h5>
-    <h2>Weight:</h2>
-    <h5><%=@climber.weight%></h5>
-    <h2>Origin:</h2>
-    <h5><%=@climber.origin%></h5>
-    <h2>Climbing Preference:</h2>
-    <h5><%=@climber.preference%></h5>
-    </center></p>
+<div class="climber-show-list">
+  <div class="ui two column vertically padded grid">
+    <div class="column">
+      <p><center>
+      <h2 class="climber-show-info-header">Experience:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.experience%></h5>
+      <h2 class="climber-show-info-header">Birthyear:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.birthyear%></h5>
+      <h2 class="climber-show-info-header">Height:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.height%> </h5>
+      <h2 class="climber-show-info-header">Weight:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.weight%></h5>
+      <h2 class="climber-show-info-header">Origin:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.origin%></h5>
+      <h2 class="climber-show-info-header">Climbing Preference:</h2>
+      <h5 class="climber-show-info-body"><%=@climber.preference%></h5>
+      </center></p>
+    </div>
+    <div class="column">
+      <p><br><br><br>
+    <h2>Current Projects:</h2> 
+    <%@climber.routes.each do |route|%> 
+      <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route)%> </li></h5>
+      <%end%>
+      <br><br>
+    <h2>Communities <%=@climber.name%> is in:</h2>
+    <%@climber.communities.each do |community|%>
+      <h5><li><%= link_to community.name, community_path(community)%></li></h5>
+      <%end%>
+      </p>
+    </div>
   </div>
-  <div class="column">
-    <p><br><br><br>
-  <h2>Current Projects:</h2> 
-  <%@climber.routes.each do |route|%> 
-    <h5><li><%= link_to route.name, route_path(route)%> </li></h5>
-    <%end%>
-    <br><br>
-  <h2>Communities <%=@climber.name%> is in:</h2>
-  <%@climber.communities.each do |community|%>
-    <h5><li><%= link_to community.name, community_path(community)%></li></h5>
-    <%end%>
-    </p>
-  </div>
+  <h2>Biography:</h2>
+  <h5><p><%=@climber.bio%></p></h5>
 </div>
-<h2>Biography:</h2>
-<h5><p><%=@climber.bio%></p></h5>
-
 <br><br>
   <h2><%= link_to "Back to All Climbers", climbers_path%></h2>
 
