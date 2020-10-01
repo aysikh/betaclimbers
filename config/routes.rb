@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :routes
   resources :climbers
 
-  get "/", to: "home#home"
+  get "/", to: "home#home", as: "home_path"
 end
