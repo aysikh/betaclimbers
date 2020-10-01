@@ -1,34 +1,5 @@
-// Place all the styles related to the Routes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-.route-body {
-  background-image: url("https://papers.co/wallpaper/papers.co-nj63-mountain-simple-fall-snow-flare-36-3840x2400-4k-wallpaper.jpg");
-  background-color: #cccccc;
-  height: 150vh;
-  width: 100%;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  margin: 0;
-  overflow: scroll;
-  }
 
-.route-index-body {
-  background-image: url("https://wallup.net/wp-content/uploads/2016/01/285053-landscape-mountain-snow.jpg");
-  background-color: #cccccc;
-  height: 150vh;
-  width: 100%;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  margin: 0;
-  overflow: scroll;
-  }
-
+//NAVBAR
 .topnav {
   overflow: hidden;
   background-color: #00224e;
@@ -52,3 +23,61 @@
   background-color: #000000;
   color: white;
 }
+
+
+//INDEX PAGE
+.route-index-body {
+  background-image: url("https://wallup.net/wp-content/uploads/2016/01/285053-landscape-mountain-snow.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  margin: 0;
+  overflow: scroll;
+}
+
+.routes-index-list {
+  border-radius: 20px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(61, 62, 65, .6);
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 10rem;
+}
+.routes-index-to-route-show-link {
+  margin-top: 0;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  letter-spacing: .3rem;
+}
+
+.routes-index-to-location-show-link {
+  color: black;
+}
+
+.routes-index-to-route-show-link:hover, .routes-index-to-location-show-link:hover {
+  color: white;
+}
+
+
+//SHOW PAGE
+.route-body {
+  background-image: url("https://papers.co/wallpaper/papers.co-nj63-mountain-simple-fall-snow-flare-36-3840x2400-4k-wallpaper.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  margin: 0;
+  overflow: scroll;
+}
+
+

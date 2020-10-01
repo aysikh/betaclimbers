@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
+
 <body>
 
-<%= render "partials/navbar" %> 
+  <%= render "partials/navbar" %> 
 
-<div class="route-body">
-<center>
-<h1><%= @route.name %></h1>
-<br><br>
-<p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
-<br><br>
+  <div class="route-body">
+    <center>
+    <h1><%= @route.name %></h1>
+    <br><br>
+    <p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
+    <br><br>
 
-<div class="ui labeled button" tabindex="0">
+    <div class="ui labeled button" tabindex="0">
 
-<%= form_for @route do |f| %>
-  <div class="ui red button">
-  <i class="heart icon"></i>
-  <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
-  <a class="ui basic red left pointing label">
-  <%= @route.likes %> 
-  </a>
-  <% end %>
+      <%= form_for @route do |f| %>
+        <div class="ui red button">
+          <i class="heart icon"></i>
+          <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
+          <a class="ui basic red left pointing label">
+            <%= @route.likes %> 
+          </a>
+        </div>
+      <% end %>
+
+      
+      </div>
+    <br><br>
+    <div>
+      <h3>Difficulty: <%= @route.difficulty %></h3>
+      <h3>Style: <%= @route.style %></h3>
+
+      <%= button_to "Edit Route", edit_route_path(@route), method: "get" %>
+
+      <h3>Climbers projecting this route:</h3>
+      <% @route.climbers.each do |climber| %>
+        <p><%= link_to climber.name, climber_path(climber) %></p>
+      <% end %>
+    </div>
+    
+    </center>
 
   </div>
-  </div>
-<br><br>
-
-<h3>Difficulty: <%= @route.difficulty %></h3>
-<h3>Style: <%= @route.style %></h3>
-
-<%= button_to "Edit Route", edit_route_path(@route), method: "get" %>
-
-<h3>Climbers projecting this route:</h3>
-<% @route.climbers.each do |climber| %>
-  <p><%= link_to climber.name, climber_path(climber) %></p>
-<% end %>
-<br><br><br><br><br>
-<%= render partial: "partials/footer", locals: {table: "Routes", my_path: routes_path} %>
-</center>
-
-</div>
 </body
-</head>
+
 </html>
