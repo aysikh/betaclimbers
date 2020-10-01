@@ -20,10 +20,11 @@
   <h3 class="location-show-info-header">Popularity:</h3><div class="location-show-info-body"> <br><%= @location.popularity %></div>
 
   <br>
-  <center><button class="edit outline icon">
-  <i class="edit icon"></i>
-  <%= link_to "Edit", edit_location_path(@location), method: "get"%>
-</button>
+  <center>
+  <button class="edit outline icon">
+    <i class="edit icon"></i>
+    <%= link_to "Edit", edit_location_path(@location), method: "get"%>
+  </button>
 
   <h2 id="location-show-routes-header">Routes:</h2>
 
