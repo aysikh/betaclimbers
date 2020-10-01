@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_action :find_location, only: [:show, :edit, :update, :delete]
   before_action :authorized
+  
   def index
     @locations = Location.all
   end

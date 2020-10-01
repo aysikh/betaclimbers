@@ -3,9 +3,10 @@ class Climber < ApplicationRecord
 
   has_many :projects
   has_many :routes, through: :projects
-  has_many :memberships
-  has_many :communities, through: :memberships
-
+  has_many :posts
+  has_many :communities, through: :posts
+  has_many :comments
+  
   validates :username, uniqueness: {case_sensitive: false, message: " must be unique."}
   
 end

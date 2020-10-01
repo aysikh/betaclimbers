@@ -5,7 +5,7 @@ Route.destroy_all
 Project.destroy_all
 Location.destroy_all
 Community.destroy_all
-Membership.destroy_all
+Post.destroy_all
 
 # CLIMBERS
 def create_climbers 
@@ -93,15 +93,15 @@ Project.create(name: "Project Nose", climber_id: climber, route_id: route)
 }
 
 
-20.times{
-  climber = climber_ids.sample()
-  community = community_ids.sample()
-  membership = Membership.all.any? {|single| 
-  climber == single.climber_id && community == single.community_id}
-  if membership == false
-    Membership.create(climber_id: climber, community_id: community)
-  end
-}
+# 20.times{
+#   climber = climber_ids.sample()
+#   community = community_ids.sample()
+#   post = Post.all.any? {|single| 
+#   climber == single.climber_id && community == single.community_id}
+#   if post == false
+#     Post.create(climber_id: climber, community_id: community)
+#   end
+# }
 
 
 

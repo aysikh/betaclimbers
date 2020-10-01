@@ -9,6 +9,13 @@
   <%@community.climbers.each do |climber|%> 
     <li><%=link_to climber.name, climber_path(climber)%></li>
     <%end%>
+  <br><br>
+  <h1> Posts </h1>
+  <% @community.posts.each do |post| %> 
+    <%= link_to post.subject, post_path(post) %> 
+    <%end%> 
+    <br><br>
+  <%= button_to "Create New Post", new_post_path, method: "get" %> 
 </div>
 </html>
 </body>

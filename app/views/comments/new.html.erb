@@ -1,0 +1,12 @@
+
+<%= render partial: "comment_form" %> 
+
+<%=form_for @post do |f| %> 
+  <%=f.label :subject, "Subject: " %>
+  <%=f.text_field :subject%> 
+  <br>
+  <%=f.label :content, "Content: " %>
+  <%=f.text_area :content%> 
+  <br>
+  <%=f.submit %> 
+  <%end%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_223532) do
+ActiveRecord::Schema.define(version: 2020_10_01_203339) do
 
   create_table "climbers", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2020_09_29_223532) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "password_digest"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "climber_id"
+    t.integer "post_id"
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "communities", force: :cascade do |t|
@@ -44,13 +52,15 @@ ActiveRecord::Schema.define(version: 2020_09_29_223532) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "memberships", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.integer "climber_id"
     t.integer "community_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["climber_id"], name: "index_memberships_on_climber_id"
-    t.index ["community_id"], name: "index_memberships_on_community_id"
+    t.string "subject"
+    t.text "content"
+    t.index ["climber_id"], name: "index_posts_on_climber_id"
+    t.index ["community_id"], name: "index_posts_on_community_id"
   end
 
   create_table "projects", force: :cascade do |t|
