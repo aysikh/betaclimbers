@@ -13,6 +13,7 @@
     <% @locations.each do |location| %>
       <a href="/locations/<%= location.id %>" class="location-index-link">
       <img src="<%= location.picture %>" class="location-index-img" alt="A picture of the location <%= location.name %>" height="50%" width="50%">
+      <br>
       <%= location.name %>
       </a>
       <br>

@@ -32,7 +32,6 @@
 //INDEX PAGE
 .location-index-img {
   border-radius: 5px;
-  display: block;
   margin-top: 1.5rem;
   margin-bottom: 5px;
   min-width: 10rem;
@@ -59,10 +58,6 @@ overflow: scroll;
   background-color: rgba(61, 62, 65, .6);
   margin-left: 10rem;
   margin-right: 10rem;
-  // box-sizing: border-box;
-  // width: 100%;
-  // max-width: 885px;
-  // padding: 40px;
 }
 
 .location-index-link {
@@ -92,6 +87,7 @@ overflow: scroll;
   margin: 0;
   overflow: scroll;
 }
+
 .weather-display {
   width: 20rem;
   opacity: .8;
@@ -99,4 +95,39 @@ overflow: scroll;
 
 #weather-title {
   margin-top: 0;
+}
+
+.location-show-list {
+  color: white;
+  border-radius: 20px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(61, 62, 65, .6);
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.location-show-info-header {
+  margin-bottom: 0;
+}
+
+.location-show-info-body {
+  font-size: 1.2rem;
+  margin-top: -1.3rem;
+}
+
+.location-show-info-body:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.location-show-edit-button {
+  margin: 0 7rem;
+}
+
+#location-show-routes-header {
+  margin-top: 6rem;
+}
+
+.location-route-links {
+  color: rgb(169, 210, 233);
+  text-decoration: underline;
 }

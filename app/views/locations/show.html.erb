@@ -14,21 +14,22 @@
 
 <%= render partial: "location_weather_display" %>
 
+<div class="location-show-list">
+  <h3 class="location-show-info-header">Rock Type:</h3><div class="location-show-info-body"> <br><%= @location.rock_type %></div>
+  <h3 class="location-show-info-header">Approach:</h3><div class="location-show-info-body"> <br><%= @location.approach %></div>
+  <h3 class="location-show-info-header">Popularity:</h3><div class="location-show-info-body"> <br><%= @location.popularity %></div>
 
-<h3>Rock Type: <%= @location.rock_type %></h3>
-<h3>Approach: <%= @location.approach %></h3>
-<h3>Popularity: <%= @location.popularity %></h3>
+  <%# button_to "Edit", edit_location_path(@location), method: "get" %>
 
-<%= button_to "Edit", edit_location_path(@location), method: "get" %>
+  <p class="location-show-edit-button"><%= button_to "Edit", edit_location_path(@location), method: "get" %></p>
 
-<h2>Routes:</h2>
+  <h2 id="location-show-routes-header">Routes:</h2>
 
-<% @location.routes.each do |route| %>
-  <p><%= link_to route.name,  route_path(route)%></p>
-<% end %>
+  <% @location.routes.each do |route| %>
+    <p><%= link_to route.name, route_path(route), {class: "location-route-links"}%></p>
+  <% end %>
+</div>
 
-<br><br><br>
-<%= render partial: "partials/footer", locals: {my_path: locations_path, table: "Locations"} %>
 </center>
 
 </div>
