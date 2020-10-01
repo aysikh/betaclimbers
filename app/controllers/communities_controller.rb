@@ -1,5 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :find_community, only: [:show]
+  before_action :authorized
 
   def index
     @communities = Community.all 

@@ -1,7 +1,7 @@
 class RoutesController < ApplicationController
   before_action :find_route, only: [:show, :edit, :update, :delete]
-  skip_before_action :verify_authenticity_token
-
+  # skip_before_action :verify_authenticity_token
+  before_action :authorized
   def index
     @routes = Route.all 
   end

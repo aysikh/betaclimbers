@@ -8,11 +8,9 @@
     </ul>
 <br><br>
 
-
-
+<%=flash[:notice]%> 
 
     <div class="climber-container">
-      
       <h1>LOG IN</h1>
       <p><%= flash[:no_user] %></p>
       <%= form_with url: climbers_login_path do |form| %> 
