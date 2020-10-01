@@ -9,8 +9,19 @@
     <center>
     <h1><%= @route.name %></h1>
     <br><br>
-    <p><img src="<%= @route.picture %>" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
-    <br><br>
+    <p><img src="<%= @route.picture %>" class="route-show-image" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
+    
+
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui red button">
+      <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
+        <i class="heart icon"></i> Like
+      </div>
+      <a class="ui basic red left pointing label">
+        1,048
+      </a>
+    </div>
+
 
     <div class="ui labeled button" tabindex="0">
 
@@ -22,43 +33,27 @@
             <%= @route.likes %> 
           </a>
         </div>
-      <% end %>
+      <% end %>  
+    </div>
 
-      
-      </div>
     <br><br>
-    <div>
-      <h3>Difficulty: <%= @route.difficulty %></h3>
-      <h3>Style: <%= @route.style %></h3>
+    <div class="route-show-list">
 
-      <%= button_to "Edit Route", edit_route_path(@route), method: "get" %>
-
+      <h3 class="route-show-info-header">Difficulty:</h3><div class="route-show-info-body"><%= @route.difficulty %></div>
+      <h3 class="route-show-info-header">Style:</h3><div class="route-show-info-body"><%= @route.style %></div>
       <h3>Climbers projecting this route:</h3>
       <% @route.climbers.each do |climber| %>
-        <p><%= link_to climber.name, climber_path(climber) %></p>
+        <p><%= link_to climber.name, climber_path(climber), {class: "route-to-climber-link"} %></p>
       <% end %>
-    </div>
     
+      <br><br>
+      <button class="edit outline icon">
+        <i class="edit icon"></i>
+        <%= link_to "Edit", edit_route_path(@route), method: "get" %>
+      </button>
+    </div>
     </center>
-
   </div>
-  </div>
-<br><br>
-<center><button class="edit outline icon">
-<i class="edit icon"></i>
-<%= link_to "Edit", edit_route_path(@route), method: "get"%>
-</button>
-
-<h3>Difficulty: <%= @route.difficulty %></h3>
-<h3>Style: <%= @route.style %></h3>
-
-
-<h3>Climbers projecting this route:</h3>
-<% @route.climbers.each do |climber| %>
-  <p><%= link_to climber.name, climber_path(climber) %></p>
-<% end %>
-
-</div>
 </body
 
 </html>

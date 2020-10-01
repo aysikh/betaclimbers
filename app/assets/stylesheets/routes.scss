@@ -66,6 +66,11 @@
 
 
 //SHOW PAGE
+.route-show-image {
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
 .route-body {
   background-image: url("https://papers.co/wallpaper/papers.co-nj63-mountain-simple-fall-snow-flare-36-3840x2400-4k-wallpaper.jpg");
   background-color: #cccccc;
@@ -80,4 +85,25 @@
   overflow: scroll;
 }
 
+.route-show-list {
+  color: white;
+  border-radius: 20px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(61, 62, 65, .8);
+  margin-top: 3rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.route-show-info-header {
+  margin-bottom: 0;
+}
+
+.route-show-info-body {
+  font-size: 1.2rem;
+}
+
+.route-to-climber-link {
+  color: rgb(169, 210, 233);
+}
 
