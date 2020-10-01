@@ -12,7 +12,7 @@ class ClimbersController < ApplicationController
   end
   
   def welcome
-
+    @api = get_users_weather()["current"]
   end
 
   def login

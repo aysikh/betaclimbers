@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
-  helper_method :current_user, :current_username, :get_the_weather, :get_current_events, :logged_in?
-
+  helper_method :current_user, :current_username, :get_the_weather, :get_current_events, :logged_in?, :get_users_weather
 
   def current_user
     user_session = Climber.find_by(id: session[:climber_id])
@@ -30,6 +29,12 @@ class ApplicationController < ActionController::Base
 
   def get_the_weather
     @current_location = Geocoder.search(@location.name).first
+    @api = RestClient.get("http://api.weatherstack.com/current?access_key=ff84e265083ca3b8a1a2a6c945f602ef&query=#{@current_location.latitude},#{@current_location.longitude}&units=f")
+    return JSON.parse(@api)
+  end
+
+  def get_users_weather
+    @current_location = Geocoder.search(current_user.origin).first
     @api = RestClient.get("http://api.weatherstack.com/current?access_key=ff84e265083ca3b8a1a2a6c945f602ef&query=#{@current_location.latitude},#{@current_location.longitude}&units=f")
     return JSON.parse(@api)
   end
