@@ -1,6 +1,6 @@
 class ClimbersController < ApplicationController
   before_action :find_climber, only: [:show, :edit, :delete, :update]
-  before_action :authorized, except: [:new, :create]
+  before_action :authorized, except: [:process_login, :new, :create]
 
   def index
     @climbers = Climber.all

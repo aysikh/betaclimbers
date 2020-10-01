@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def current_user
     user_session = Climber.find_by(id: session[:climber_id])
     # if user_session == nil
+    #   flash[:notice] = "You must be logged in. "
     #   redirect_to '/'
     # else
       return user_session
@@ -38,18 +39,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized
-    # byebug
     if !logged_in?
       flash[:notice] = "You must be logged in. "
-      # byebug
       redirect_to '/' 
-      # flash[:notice] = "You must be logged in."
     end
   end
-  # def flash_class(level)
-  #   case level
-  #   when "success" then "ui blue message"
-  #   end
-  # end
-
 end
