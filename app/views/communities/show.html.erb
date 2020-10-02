@@ -12,8 +12,10 @@
   <br><br>
   <h1> Posts </h1>
   <% @community.posts.each do |post| %> 
-    <h3><%= link_to post.subject, post_path(post) %></h3>
-    <%end%>
+    <% if post.subject.present? %>
+      <h3><%= link_to post.subject, post_path(post) %></h3>
+    <% end %>
+  <%end%>
     <br><br>
   <%= button_to "Create New Post", new_post_path, method: "get" %> 
 </div>
