@@ -16,6 +16,8 @@
             <%= f.text_field :difficulty %><br><br>
             <h3><%= f.label "Style:" %><br></h3>
             <%= f.text_area :style %><br><br>
+            <h3><%= f.label "Location:" %><br></h3>
+            <%= f.collection_select(:id, Location.all, :id, :name) %><br><br>
             <%= f.submit %>
           <% end %>
         </div>

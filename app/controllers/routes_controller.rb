@@ -15,6 +15,7 @@ class RoutesController < ApplicationController
   end
 
   def create
+    params[:route][:location_id] = params[:route][:id]
     @route = Route.new(route_params)
     if @route.save
       redirect_to route_path(@route.id)
