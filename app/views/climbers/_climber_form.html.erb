@@ -5,30 +5,36 @@
 <% end %>
 
 <center>
-<h1 style="font-size:40px">"It is not the mountain that we conquer, but ourselves."</h1>
-<br><br>
-<%=form_for @climber do |f| %> 
-  <%=f.label :name, "Name: " %><br>
-  <%=f.text_field :name%>
-  <br><br>
-  <%=f.label :experience, "Experience: " %><br>
-  <%=f.text_field :experience%> 
-  <br><br>
-  <%=f.label :birthyear, "Birthyear: "%><br>
-  <%=f.number_field :birthyear%> 
-  <br><br>
-  <%=f.label :height, "Height: "%><br>
-  <%=f.text_field :height%> 
-  <br><br>
-  <%=f.label :weight, "Weight: "%><br>
-  <%=f.number_field :weight%> 
-  <br><br>
-  <%=f.label :origin, "Born In: "%><br>
-  <%=f.text_field :origin%> 
-  <br><br>
-  <%=f.label :preference, "Preference: "%><br>
-  <%=f.text_field :preference%>
-  <br><br>
+<div class="climber-create-bg"> 
+    <div class="climber-create-box">
+          <h1 style="font-size:40px">"It is not the mountain that we conquer, but ourselves."</h1>
+          <br><br>
+          <div class="ui form">
+          <label>
+          <%=form_for @climber do |f| %> 
+            <%=f.label :name, "Name: " %><br>
+            <%=f.text_field :name%>
+            <br><br>
+            <%=f.label :experience, "Experience: " %><br>
+            <%=f.text_field :experience%> 
+            <br><br>
+            <%=f.label :birthyear, "Birthyear: "%><br>
+            <%=f.number_field :birthyear%> 
+            <br><br>
+            <%=f.label :height, "Height: "%><br>
+            <%=f.text_field :height%> 
+            <br><br>
+            <%=f.label :weight, "Weight: "%><br>
+            <%=f.number_field :weight%> 
+            <br><br>
+            <%=f.label :origin, "Born In: "%><br>
+            <%=f.text_field :origin%> 
+            <br><br>
+            <%=f.label :preference, "Preference: "%><br>
+            <%=f.text_field :preference%>
+            <br><br>
+            </label>
+
   <%=f.label :communities, "Community: " %><br><br>
   <%=f.collection_check_boxes(:communities, Community.all, :id,:name) do |b|%>
     <div class="climber-edit-checkbox">
@@ -49,8 +55,12 @@
   <%=f.label :profile_pic, "Profile Picture(URL): " %> <br>
   <%=f.text_field :profile_pic%>
   <br><br>
-  
-  <%=f.submit "Submit" %> 
+  <button class="ui blue button">
+  <%f.submit %>Submit!
+  </button>
   <br><br>
+      </div>
+    </div>
+  </div>
 <%end%>
 </center>
