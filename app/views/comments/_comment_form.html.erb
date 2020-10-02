@@ -6,7 +6,7 @@
       <label>
       <%=form_for @comment do |f|%> 
         <%=f.label :message, "Comment: " %>
-        <%=f.text_area :message %> 
+        <%=f.text_area :message, required: true%> 
         <%= f.hidden_field :post_id %>
         <br><br>
         <%=f.submit%> 

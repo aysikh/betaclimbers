@@ -3,6 +3,7 @@
 <body>
 
 <%= render partial: "partials/navbar" %> 
+<div class="flash-info-for-all-pages"><%= flash[:notice] %></div>
 
 <div class="climbers-body">
 <center><h1>What's the scoop on <%=@climber.name%>?</h1>
@@ -45,7 +46,7 @@
         <div class="ui small basic icon buttons">
           <button class="ui button">
             <i class="trash alternate icon"></i>
-                <%= link_to "", climber_remove_route_path(route), { class: "climber-show-remove-link" } %>
+                <%= link_to "Delete", climber_remove_route_path(route), { class: "climber-show-remove-link" } %>
           </button>
         </div>
       <%end%>
@@ -54,15 +55,15 @@
 
       <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
       <%@communities.each do |community|%>
-
+        <h5><%= link_to community.name, community_path(community)%></h5>
           <div class="ui small basic icon buttons">
-            <button class="ui button"><i class="trash alternate icon"></i>
-            <%= link_to "", climber_remove_community_path(community.id), { class: "climber-show-remove-link" } %>
+            <button class="ui button">
+            <i class="trash alternate icon"></i>
+            <%= link_to "Delete", climber_remove_community_path(community.id), { class: "climber-show-remove-link" } %>
             </button>
-
-            <h5><%= link_to community.name, community_path(community)%></h5>
           </div>
-          <%end%>
+      <%end%>
+      
         </div>
       </div>
     <h2 class="climber-show-info-header">Biography:</h2>

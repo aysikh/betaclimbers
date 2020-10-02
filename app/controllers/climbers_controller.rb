@@ -46,6 +46,7 @@ class ClimbersController < ApplicationController
     @climber = Climber.new(climber_params)
     if @climber.save
       session[:climber_id] = @climber.id
+      cookies["this_page_climber"] = @climber.id
       redirect_to edit_climber_path(@climber)
     else
       render :new
@@ -91,6 +92,7 @@ class ClimbersController < ApplicationController
   end
 
   def remove_route
+    # byebug
     @route = Route.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
     if authorized_to_edit
