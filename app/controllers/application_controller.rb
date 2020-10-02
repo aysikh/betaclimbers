@@ -50,6 +50,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authorized_to_edit
+    
+  end
+
   def join_communities(coms)
     coms.shift()
     coms.each do |com_id|
