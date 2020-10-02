@@ -18,43 +18,58 @@
 <br><br>
 
 <div class="ui divider"></div>
-<div class="climber-show-list">
-  <div class="ui two column vertically padded grid">
-    <div class="column">
-      <p><center>
-      <h2 class="climber-show-info-header">Experience:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.experience%></h5>
-      <h2 class="climber-show-info-header">Birthyear:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.birthyear%></h5>
-      <h2 class="climber-show-info-header">Height:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.height%> </h5>
-      <h2 class="climber-show-info-header">Weight:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.weight%></h5>
-      <h2 class="climber-show-info-header">Origin:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.origin%></h5>
-      <h2 class="climber-show-info-header">Climbing Preference:</h2>
-      <h5 class="climber-show-info-body"><%=@climber.preference%></h5>
-      </center></p>
-    </div>
-    <div class="column">
-      <p>
-    <h2 class="climber-show-info-header">Current Projects:</h2> 
+  <div class="climber-show-list">
+    <div class="ui two column vertically padded grid">
+      <div class="column">
+        <p><center>
+        <h2 class="climber-show-info-header">Experience:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.experience%></h5>
+        <h2 class="climber-show-info-header">Birthyear:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.birthyear%></h5>
+        <h2 class="climber-show-info-header">Height:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.height%> </h5>
+        <h2 class="climber-show-info-header">Weight:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.weight%></h5>
+        <h2 class="climber-show-info-header">Origin:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.origin%></h5>
+        <h2 class="climber-show-info-header">Climbing Preference:</h2>
+        <h5 class="climber-show-info-body"><%=@climber.preference%></h5>
+        </center></p>
+      </div>
+      <div class="column">
+
+    <h2 class="climber-show-info-header">In The Works: </h2> 
     <%@routes.each do |route|%> 
-      <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route) %> </li></h5>
-      <%= link_to "Remove", climber_remove_route_path(route), { class: "climber-show-remove-link" } %>
-    <%end%>
-      <br><br>
-    <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
-    <%@communities.each do |community|%>
-      <h5><%= link_to community.name, community_path(community)%></h5>
-      <%= link_to "Remove", climber_remove_community_path(community.id), { class: "climber-show-remove-link" } %>
-    <%end%>
-      </p>
+      <h5 class="climber-show-project-link">
+      <%= link_to route.name, route_path(route) %> </h5>
+        <div class="ui small basic icon buttons">
+          <button class="ui button">
+            <i class="trash alternate icon"></i>
+                <%= link_to "", climber_remove_route_path(route), { class: "climber-show-remove-link" } %>
+          </button>
+        </div>
+      <%end%>
+
+    <br><br>
+
+      <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
+      <%@communities.each do |community|%>
+
+          <div class="ui small basic icon buttons">
+            <button class="ui button"><i class="trash alternate icon"></i>
+            <%= link_to "", climber_remove_community_path(community.id), { class: "climber-show-remove-link" } %>
+            </button>
+
+            <h5><%= link_to community.name, community_path(community)%></h5>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    <h2 class="climber-show-info-header">Biography:</h2>
+    <h5><p><%=@climber.bio%></p></h5>
     </div>
   </div>
-  <h2 class="climber-show-info-header">Biography:</h2>
-  <h5><p><%=@climber.bio%></p></h5>
 </div>
-</div>
+
 </body>
 </html>
