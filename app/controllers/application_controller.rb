@@ -50,8 +50,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authorized_to_edit
-    current_user.id == cookies["this_page_climber"].to_i
+  def authorized_to_edit(cookie)
+    current_user.id == cookie.to_i
   end
 
   def join_communities(coms)

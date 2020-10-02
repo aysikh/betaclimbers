@@ -6,11 +6,16 @@
 <center>
 <div class="post-title-box">
 <h1> <%=@post.subject%> </h1>
+  <div class="ui small basic icon buttons">
+    <button class="ui button">
+      <i class="trash alternate icon"></i>
+      <%= link_to "Delete", post_delete_path(@post), { class: "post-show-remove-link" } %>
+    </button>
+  </div>
 </div>
 <div class="post-content-box">
 <h5> <%=@post.content%> </h5> 
 </div>
-
 <br><br>
 <div class="post-text-box">
 <h3> Comments: </h3>
