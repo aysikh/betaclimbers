@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   before_action :authorized
   
   def show
+    @community = Community.find(@post["community_id"])
+    cookies["this_posts_climber_id"] = @post.climber.id
+    cookies["this_posts_community_id"] = @community.id
   end
 
   def new
@@ -23,6 +26,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if authorized_to_edit
+      render :edit
+    else
+      flash["notice"] = "Can only edit your own posts."
+      redirect_to community_path(cookies["this_posts_community_id"])
+    end
   end
 
   def update
@@ -36,9 +45,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-    flash[:danger] = "Post deleted"
-    redirect_to community_path
+    @community = Community.find(@post["community_id"])
+    if authorized_to_edit
+      @post.destroy
+      flash[:danger] = "Post deleted"
+      redirect_to community_path(@community.id)
+    else
+      flash["notice"] = "Can only delete your own posts."
+      redirect_to community_path(@coummunity.id)
+    end
   end
 
   private
