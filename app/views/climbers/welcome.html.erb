@@ -16,8 +16,8 @@
 <%= render partial: "climber_weather_display" %>
 <br><br>
 <h1 class="climber-welcome-header">Your projects: </h1>
-<% current_user.routes.each do |route|%> 
-<li><%= link_to route.name, route_path(route)%> </li>
+<% @routes.each do |route|%> 
+  <li><%= link_to route.name, route_path(route)%> </li>
 <%end%>
 
 <br><br>

@@ -33,8 +33,11 @@
         <h3 class="route-show-info-header">Style:</h3>
         <div class="route-show-info-body"><%= @route.style %></div>
         <h3>Climbers projecting this route:</h3>
-        <% @route.climbers.each do |climber| %>
+        <% @climbers.each do |climber| %>
         <p><%= link_to climber.name, climber_path(climber), {class: "route-to-climber-link"} %></p>
+        <% end %>
+        <%= form_for @route do |f| %>
+          <%= button_to "Add Project", route_path(@route), params: { add_route: true } %>
         <% end %>
 
         <br><br>

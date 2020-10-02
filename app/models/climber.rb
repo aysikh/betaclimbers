@@ -10,7 +10,13 @@ class Climber < ApplicationRecord
   validates :username, uniqueness: {case_sensitive: false, message: " must be unique."}
   
 
-
+  def delete_route(route_obj)
+    @climber.routes.each do |route|
+      if route == route_obj
+        route.delete
+      end
+    end
+  end
 
 
 end

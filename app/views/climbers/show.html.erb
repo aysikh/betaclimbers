@@ -38,13 +38,15 @@
     <div class="column">
       <p>
     <h2 class="climber-show-info-header">Current Projects:</h2> 
-    <%@climber.routes.each do |route|%> 
-      <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route)%> </li></h5>
-      <%end%>
+    <%@routes.each do |route|%> 
+      <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route) %> </li></h5>
+      <%= link_to "Remove", climber_path(route), method: "delete" %>
+    <%end%>
       <br><br>
     <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
     <%@communities.each do |community|%>
       <h5><li><%= link_to community.name, community_path(community)%></li></h5>
+      <%= link_to "Remove", climber_path(community), method: "delete" %>
     <%end%>
       </p>
     </div>

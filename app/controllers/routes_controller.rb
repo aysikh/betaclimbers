@@ -7,6 +7,7 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @climbers = @route.climbers.uniq
   end
 
   def new
@@ -29,13 +30,17 @@ class RoutesController < ApplicationController
     if params[:add_like]
       @route.add_like
       redirect_to route_path(@route)
+    elsif params[:add_route]
+      Climber.find(session[:climber_id]).routes.push(@route)
+      redirect_to route_path(@route)
+    else
+      @route.update(route_params)
+      if @route.save
+        redirect_to route_path(@route)
+      else
+        render :edit
+      end
     end
-    # @route.update(route_params)
-    # if @route.save
-    #   redirect_to route_path(@route)
-    # else
-    #   render :edit
-    # end
   end
 
   def destroy

@@ -10,10 +10,12 @@ class ClimbersController < ApplicationController
     id = params[:id]
     @climber = Climber.find(id)
     @communities = @climber.communities.uniq
+    @routes = @climber.routes.uniq
   end
   
   def welcome
     @api = get_users_weather()["current"]
+    @routes = current_user.routes.uniq
   end
 
   def login
@@ -79,7 +81,10 @@ class ClimbersController < ApplicationController
   end
 
   def destroy
-    redirect_to climbers_path
+    @route = Route.find(params["id"].to_i)
+    @climber = Climber.find(session["climber_id"])
+    @climber.routes.delete(@route.id)
+    redirect_to climber_path(@climber)
   end
 
   private
