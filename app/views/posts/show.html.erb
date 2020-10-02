@@ -6,12 +6,6 @@
 <center>
 <div class="post-title-box">
 <h1> <%=@post.subject%> </h1>
-  <div class="ui small basic icon buttons">
-    <button class="ui button">
-      <i class="trash alternate icon"></i>
-      <%= link_to "Delete", post_delete_path(@post), { class: "post-show-remove-link" } %>
-    </button>
-  </div>
 </div>
 <div class="post-content-box">
 <h5> <%=@post.content%> </h5> 
@@ -33,6 +27,10 @@
 <%= link_to "Add Comment", new_comment_path(post_id: @post.id) %> </button> 
 </div>
 <br><br>
+    <button class="ui black button">
+      <i class="trash alternate icon"></i>
+      <%= link_to "Delete", post_delete_path(@post), { class: "post-show-remove-link" } %>
+    </button>
 <button class="ui black button">
 <%= link_to "Edit Post", edit_post_path(@post)%>
 </button>
