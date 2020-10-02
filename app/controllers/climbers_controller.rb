@@ -69,7 +69,7 @@ class ClimbersController < ApplicationController
   end
 
   def edit
-    if authorized_to_edit
+    if authorized_to_edit(cookies["this_page_climber"])
       render :edit
     else
       flash[:notice] = "You can only edit your own information."
@@ -92,10 +92,9 @@ class ClimbersController < ApplicationController
   end
 
   def remove_route
-    # byebug
     @route = Route.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
-    if authorized_to_edit
+    if authorized_to_edit(cookies["this_page_climber"])
       @climber.routes.delete(@route.id)
       redirect_to climber_path(@climber)
     else
@@ -107,7 +106,7 @@ class ClimbersController < ApplicationController
   def remove_community
     @community = Community.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
-    if authorized_to_edit
+    if authorized_to_edit(cookies["this_page_climber"])
       @climber.communities.delete(@community.id)
       redirect_to climber_path(@climber)
     else
