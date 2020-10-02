@@ -11,6 +11,7 @@ class ClimbersController < ApplicationController
     @climber = Climber.find(id)
     @communities = @climber.communities.uniq
     @routes = @climber.routes.uniq
+    cookies["this_page_climber"] = @climber.id
   end
   
   def welcome
@@ -67,7 +68,12 @@ class ClimbersController < ApplicationController
   end
 
   def edit
-    render :edit
+    if authorized_to_edit
+      render :edit
+    else
+      flash[:notice] = "You can only edit your own information."
+      redirect_to climber_path(cookies["this_page_climber"].to_i)
+    end
   end
 
   def update
@@ -87,15 +93,26 @@ class ClimbersController < ApplicationController
   def remove_route
     @route = Route.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
-    @climber.routes.delete(@route.id)
-    redirect_to climber_path(@climber)
+    if authorized_to_edit
+      @climber.routes.delete(@route.id)
+      redirect_to climber_path(@climber)
+    else
+      flash[:notice] = "You can only edit your own information."
+      redirect_to climber_path(cookies["this_page_climber"].to_i)
+    end
   end
 
   def remove_community
     @community = Community.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
-    @climber.communities.delete(@community.id)
-    redirect_to climber_path(@climber)
+    if authorized_to_edit
+      @climber.communities.delete(@community.id)
+      redirect_to climber_path(@climber)
+    else
+      flash[:notice] = "You can only edit your own information."
+      redirect_to climber_path(cookies["this_page_climber"].to_i)
+    end
+
   end
 
   private
