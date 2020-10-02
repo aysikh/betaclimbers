@@ -1,23 +1,37 @@
-<center>
 
+<div class="post-show">
+<center>
+<div class="post-title-box">
 <h1> <%=@post.subject%> </h1>
-<br>
-<h4> <%=@post.content%> </h1> 
+</div>
+<div class="post-content-box">
+<h5> <%=@post.content%> </h5> 
+</div>
 
 <br><br>
-
+<div class="post-text-box">
+<h3> Comments: </h3>
+<br>
 <% @post.comments.each do |comment| %> 
 <p>
   <%= comment.created_at %> : <%= comment.climber.username %> : <%= comment.message %>
 </p>
 <%end%> 
 <br><br>
+<button class="ui white button">
 <%= link_to "Add Comment", new_comment_path(post_id: @post.id) %>
-<br>
-<%= link_to "Edit", edit_post_path(@post)%> 
+</button>
+</div>
 <br><br>
+<button class="ui inverted standard button">
+<%= link_to "Edit Post", edit_post_path(@post)%> 
+</button>
+<br><br>
+<button class="ui black button">
 <%= link_to "Back", community_path(@post.community.id)%> 
+</button>
+
 
 </center>
 
-
+</div>

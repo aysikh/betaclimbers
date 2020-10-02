@@ -35,6 +35,7 @@
 
 .climber-show-info-header {
   margin-bottom: 0;
+  color: rgb(170, 170, 170); 
 }
 
 .climber-show-info-body {
@@ -70,14 +71,14 @@
   margin-right: 10rem;
 }
 
-h2 {
-  color: rgb(98, 130, 177); 
-}
-
-
 //EDIT PAGE
 .climber-edit-checkbox {
   display: inline-block;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.climber-welcome-header {
+  margin-bottom: 0;
+  color: rgba(162, 176, 196, 0.897); 
 }
