@@ -1,11 +1,11 @@
-<div class="topnav">
-<a class="active" href="/climbers/welcome">Home</a>
-<a href="/climbers">Climbers</a>
-<a href="/communities">Communities</a>
-<a href="/locations">Locations</a>
-<a href="/routes">Routes</a>
-
-<a style="float:right" href="/climbers/logout">Log Out</a>
-<a style="float:right" href="/climbers/<%=current_user.id%>"><%= current_user.username %></a>
-
+<div class="ui inverted menu">
+<a class="item" href="/climbers/welcome">Home</a>
+<a class="item" href="/climbers">Climbers</a>
+<a class="item" href="/communities">Communities</a>
+<a class="item" href="/locations">Locations</a>
+<a class="item" href="/routes">Routes</a>
+<div class= "right menu">
+<a class="item" href="/climbers/<%=current_user.id%>"><%= current_user.username %></a>
+<a class="item" href="/climbers/logout">Log Out</a>
+</div>
 </div>

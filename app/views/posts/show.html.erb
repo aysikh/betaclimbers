@@ -12,10 +12,11 @@
 <div class="post-text-box">
 <h3> Comments: </h3>
 <br>
-<% @post.comments.each do |comment| %> 
-<p>
-  <%= comment.created_at %> : <%= comment.climber.username %> : <%= comment.message %>
-</p>
+    <% @post.comments.each do |comment| %> 
+    <p>
+    <%comment_time = comment[:created_at].strftime('%m/%d/%y %I:%M %p')%> 
+      <%= comment_time %> : <%= comment.climber.username %> : <%= comment.message %>
+    </p>
 <%end%> 
 <br><br>
 <button class="ui white button">
