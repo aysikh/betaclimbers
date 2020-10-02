@@ -3,25 +3,29 @@
 <body>
 
 <%= render partial: "partials/navbar" %> 
-  
+
 <div class="community-body">
+
   <h1>Other Members in the <%=@community.name%> Community:</h1>
   <%@climbers.each do |climber|%> 
     <li><%=link_to climber.name, climber_path(climber)%></li>
     <%end%>
   <br><br>
-  <div class="community-post-box">
-  <h1> Posts </h1>
-  <% @community.posts.each do |post| %> 
-    <% if post.subject.present? %>
-      <h3><%= link_to post.subject, post_path(post), {class:"community-subject"}%></h3>
-    <% end %>
-  <%end%>
-    <br><br>
-      <button class="ui standard button">
-      <%= link_to "Create New Post", new_post_path, method: "get" %> 
-      </button>
+
+<div class="community-post-box">
+  <div class="community-content-box">
+    <h1> Posts </h1>
+    <% @community.posts.each do |post| %> 
+      <% if post.subject.present? %>
+        <h3><%= link_to post.subject, post_path(post), {class:"community-subject"}%></h3>
+      <% end %>
+    <%end%>
+      <br><br>
+        <button class="ui standard button">
+        <%= link_to "Create New Post", new_post_path, method: "get" %> 
+        </button>
     </div>
   </div>  
+  </div>
 </html>
 </body>
