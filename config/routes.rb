@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :comments, only: [:new, :create, :edit, :update, :destroy]
   resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
 
+  get 'climber/remove_community', to: 'climbers#remove_community'
+
 end

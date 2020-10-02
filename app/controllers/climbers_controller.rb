@@ -87,6 +87,13 @@ class ClimbersController < ApplicationController
     redirect_to climber_path(@climber)
   end
 
+  def remove_community
+    @community = Community.find(params["format"].to_i)
+    @climber = Climber.find(session["climber_id"])
+    @climber.communities.delete(@community.id)
+    redirect_to climber_path(@climber)
+  end
+
   private
 
 

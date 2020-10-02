@@ -47,7 +47,7 @@
     <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
     <%@communities.each do |community|%>
       <h5><li><%= link_to community.name, community_path(community)%></li></h5>
-      <%= link_to "Remove", climber_path(community), method: "delete" %>
+      <%= link_to "Remove", climber_remove_community_path(community.id), method: "get" %>
     <%end%>
       </p>
     </div>
