@@ -41,13 +41,13 @@
     <h2 class="climber-show-info-header">Current Projects:</h2> 
     <%@routes.each do |route|%> 
       <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route) %> </li></h5>
-      <%= link_to "Remove", climber_path(route), method: "delete" %>
+      <%= link_to "Remove", climber_remove_route_path(route), { class: "climber-show-remove-link" } %>
     <%end%>
       <br><br>
     <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
     <%@communities.each do |community|%>
-      <h5><li><%= link_to community.name, community_path(community)%></li></h5>
-      <%= link_to "Remove", climber_remove_community_path(community.id), method: "get" %>
+      <h5><%= link_to community.name, community_path(community)%></h5>
+      <%= link_to "Remove", climber_remove_community_path(community.id), { class: "climber-show-remove-link" } %>
     <%end%>
       </p>
     </div>

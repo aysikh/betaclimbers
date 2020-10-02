@@ -81,7 +81,11 @@ class ClimbersController < ApplicationController
   end
 
   def destroy
-    @route = Route.find(params["id"].to_i)
+    redirect_to climber_path(@climber)
+  end
+
+  def remove_route
+    @route = Route.find(params["format"].to_i)
     @climber = Climber.find(session["climber_id"])
     @climber.routes.delete(@route.id)
     redirect_to climber_path(@climber)
