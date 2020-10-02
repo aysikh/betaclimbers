@@ -1,5 +1,6 @@
 class CommunitiesController < ApplicationController
-  before_action :find_community, only: [:show]
+  before_action :find_community, :no_repeats, only: [:show]
+
   before_action :authorized
 
   def index
@@ -12,6 +13,12 @@ class CommunitiesController < ApplicationController
   end
 
   private
+
+  def no_repeats
+    # byebug
+    @community = Community.find(params[:id])
+    @community.climbers.uniq
+  end
 
   def find_community
     @community = Community.find(params[:id])

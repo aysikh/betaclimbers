@@ -93,15 +93,15 @@ Project.create(name: "Project Nose", climber_id: climber, route_id: route)
 }
 
 
-# 20.times{
-#   climber = climber_ids.sample()
-#   community = community_ids.sample()
-#   post = Post.all.any? {|single| 
-#   climber == single.climber_id && community == single.community_id}
-#   if post == false
-#     Post.create(climber_id: climber, community_id: community)
-#   end
-# }
+30.times{
+  climber = climber_ids.sample()
+  community = community_ids.sample()
+  post = Post.all.any? {|single| 
+  climber == single.climber_id && community == single.community_id}
+  if post == false
+    Post.create(climber_id: climber, community_id: community)
+  end
+}
 
 
 

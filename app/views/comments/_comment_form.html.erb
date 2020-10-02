@@ -1,8 +1,9 @@
 
 
-<%=forum_for @comment do |f|%> 
+<%=form_for @comment do |f|%> 
 <%=f.label :nessage, "Message:" %>
 <%=f.text_area :message %> 
+<%= f.hidden_field :post_id %>
 <br>
 <%=f.submit%> 
 <%end%> 

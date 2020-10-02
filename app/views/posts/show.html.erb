@@ -1,6 +1,23 @@
-<h1> Posts </h1>
+<center>
+
+<h1> <%=@post.subject%> </h1>
 <br>
+<h4> <%=@post.content%> </h1> 
+
+<br><br>
+
+<% @post.comments.each do |comment| %> 
+<p>
+  <%= comment.created_at %> : <%= comment.climber.username %> : <%= comment.message %>
+</p>
+<%end%> 
+<br><br>
+<%= link_to "Add Comment", new_comment_path(post_id: @post.id) %>
+<br>
+<%= link_to "Edit", edit_post_path(@post)%> 
+<br><br>
+<%= link_to "Back", community_path(@post.community.id)%> 
+
+</center>
 
 
-
- <%# comments here %> 

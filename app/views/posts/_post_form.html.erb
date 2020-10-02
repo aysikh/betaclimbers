@@ -1,3 +1,10 @@
+<% if @post.errors %>
+  <% @post.errors.full_messages.each do |error|%>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<%=flash[:message]%> 
 <%=form_for @post do |f| %> 
   <%=f.label :subject, "Subject: " %>
   <%=f.text_field :subject%> 

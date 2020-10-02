@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   def create
@@ -14,6 +15,7 @@ class PostsController < ApplicationController
     params["post"]["climber_id"] = session[:climber_id]
     @post = Post.new(post_params)
     if @post.save
+      flash[:message] = "Post successfully added!"
       redirect_to post_path(@post.id)
     else
       render :new
@@ -24,8 +26,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.update(post_params)
+    @post.update(post_params)
     if @post.save
+      flash[:message] = "Post successfully updated!"
       redirect_to post_path(@post)
     else
       render :edit
@@ -33,6 +36,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @comment.destroy
+    flash[:danger] = "Post deleted"
     redirect_to community_path
   end
 
