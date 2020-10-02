@@ -3,57 +3,46 @@
 
 <body>
 
-  <%= render "partials/navbar" %> 
+  <%= render "partials/navbar" %>
 
   <div class="route-body">
     <center>
-    <h1><%= @route.name %></h1>
-    <br><br>
-    <p><img src="<%= @route.picture %>" class="route-show-image" alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%"></p>
-    
-
-    <div class="ui labeled button" tabindex="0">
-      <div class="ui red button">
-      <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
-        <i class="heart icon"></i> Like
-      </div>
-      <a class="ui basic red left pointing label">
-        1,048
-      </a>
-    </div>
-
-
-    <div class="ui labeled button" tabindex="0">
-
-      <%= form_for @route do |f| %>
-        <div class="ui red button">
-          <i class="heart icon"></i>
-          <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button heart icon"%>
-          <a class="ui basic red left pointing label">
-            <%= @route.likes %> 
-          </a>
-        </div>
-      <% end %>  
-    </div>
-
-    <br><br>
-    <div class="route-show-list">
-
-      <h3 class="route-show-info-header">Difficulty:</h3><div class="route-show-info-body"><%= @route.difficulty %></div>
-      <h3 class="route-show-info-header">Style:</h3><div class="route-show-info-body"><%= @route.style %></div>
-      <h3>Climbers projecting this route:</h3>
-      <% @route.climbers.each do |climber| %>
-        <p><%= link_to climber.name, climber_path(climber), {class: "route-to-climber-link"} %></p>
-      <% end %>
-    
+      <h1><%= @route.name %></h1>
       <br><br>
-      <button class="edit outline icon">
-        <i class="edit icon"></i>
-        <%= link_to "Edit", edit_route_path(@route), method: "get" %>
-      </button>
-    </div>
+      <p><img src="<%= @route.picture %>" class="route-show-image"
+          alt="A picture of the climbing face with an overlay of the route <%= @route.name %>" height="40%" width="40%">
+      </p>
+
+
+      <div class="ui labeled button" tabindex="0">
+
+        <%= form_for @route do |f| %>
+        
+          <%= button_to "Like!", route_path(@route), params: { add_like: true}, class: "ui red button"%>
+          <a class="ui basic red left pointing label">
+            <%= @route.likes %>
+          </a>
+        <% end %>
+      </div>
+
+      <br><br>
+      <div class="route-show-list">
+
+        <h3 class="route-show-info-header">Difficulty:</h3>
+        <div class="route-show-info-body"><%= @route.difficulty %></div>
+        <h3 class="route-show-info-header">Style:</h3>
+        <div class="route-show-info-body"><%= @route.style %></div>
+        <h3>Climbers projecting this route:</h3>
+        <% @route.climbers.each do |climber| %>
+        <p><%= link_to climber.name, climber_path(climber), {class: "route-to-climber-link"} %></p>
+        <% end %>
+
+        <br><br>
+        <button class="edit outline icon">
+          <i class="edit icon"></i>
+          <%= link_to "Edit", edit_route_path(@route), method: "get" %>
+        </button>
+      </div>
     </center>
   </div>
-</body
-
-</html>
+</body </html>
