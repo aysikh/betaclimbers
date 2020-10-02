@@ -1,0 +1,25 @@
+
+.comment-body-bg {
+  background-image: url("https://www.mountainphotography.com/images/xl/20091130-Teton-Moonlight-bw.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0;
+  overflow: scroll;
+}
+
+
+.comment-text-box {
+  color: white;
+  border-radius: 5px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(73, 74, 75, 0.8);
+  margin-top: 3rem;
+  margin-left: 30rem;
+  margin-right: 30rem;
+}

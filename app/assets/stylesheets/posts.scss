@@ -1,3 +1,72 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.post-show {
+  background-image: url("https://images3.alphacoders.com/980/980226.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0;
+  overflow: scroll;
+}
+
+.post-text-box {
+  color: white;
+  border-radius: 10px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(61, 62, 65, .8);
+  margin-top: 3rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.post-title-box {
+  color: white;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+  background-color: rgba(52, 155, 240, 0.61);
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.post-content-box {
+  color: white;
+  border-radius: 5px;
+  padding: 1.5rem 1.5rem;
+  background-color: rgba(19, 81, 133, 0.61);
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.post-create-bg {
+  background-image: url("https://wallpaperaccess.com/full/2010876.jpg");
+  background-color: #cccccc;
+  height: 150vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0;
+  overflow: scroll;
+}
+
+
+.post-create-box {
+  color: white;
+  border-radius: 5px;
+  padding: 2.5rem 2.5rem;
+  background-color: rgba(36, 65, 100, 0.8);
+  margin-top: 3rem;
+  margin-left: 30rem;
+  margin-right: 30rem;
+}
+

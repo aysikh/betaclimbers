@@ -1,9 +1,17 @@
 
-
-<%=form_for @comment do |f|%> 
-<%=f.label :nessage, "Message:" %>
-<%=f.text_area :message %> 
-<%= f.hidden_field :post_id %>
-<br>
-<%=f.submit%> 
-<%end%> 
+<center>
+<div class="comment-body-bg">
+  <div class="comment-text-box">
+    <div class="ui form">
+      <label>
+      <%=form_for @comment do |f|%> 
+        <%=f.label :message, "Comment: " %>
+        <%=f.text_area :message %> 
+        <%= f.hidden_field :post_id %>
+        <br><br>
+        <%=f.submit%> 
+        <%end%> 
+      </label>
+    </div>
+  </div>
+</div>

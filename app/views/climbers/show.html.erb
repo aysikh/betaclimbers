@@ -37,24 +37,21 @@
     </div>
     <div class="column">
       <p>
-    <h2>Current Projects:</h2> 
+    <h2 class="climber-show-info-header">Current Projects:</h2> 
     <%@climber.routes.each do |route|%> 
       <h5 class="climber-show-project-link"><li><%= link_to route.name, route_path(route)%> </li></h5>
       <%end%>
       <br><br>
-    <h2>Communities <%=@climber.name%> is in:</h2>
+    <h2 class="climber-show-info-header">Communities <%=@climber.name%> is in:</h2>
     <%@climber.communities.each do |community|%>
       <h5><li><%= link_to community.name, community_path(community)%></li></h5>
       <%end%>
       </p>
     </div>
   </div>
-  <h2>Biography:</h2>
+  <h2 class="climber-show-info-header">Biography:</h2>
   <h5><p><%=@climber.bio%></p></h5>
 </div>
-<br><br>
-  <h2><%= link_to "Back to All Climbers", climbers_path%></h2>
-
 </div>
 </body>
 </html>

@@ -15,8 +15,9 @@
     <p>Location: <%= link_to route.location.name, location_path(route.location), {class: "routes-index-to-location-show-link"} %><br><br></p>
   <br>
   <% end %>
-
-<%= button_to "Create New Route", new_route_path, method: "get" %>
+  <button class="ui standard button">
+  <%= link_to "Create New Route", new_route_path, method: "get" %>
+  </button>
 </div>
 </center>
 </div>

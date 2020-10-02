@@ -1,16 +1,24 @@
-<% if @post.errors %>
-  <% @post.errors.full_messages.each do |error|%>
-    <%= error %>
-  <% end %>
-<% end %>
 
-<%=flash[:message]%> 
-<%=form_for @post do |f| %> 
-  <%=f.label :subject, "Subject: " %>
-  <%=f.text_field :subject%> 
-  <br>
-  <%=f.label :content, "Content: " %>
-  <%=f.text_area :content%> 
-  <br>
-  <%=f.submit %> 
-  <%end%>
+<center>
+
+<div class="post-create-bg">
+  <div class="post-create-box">
+    <div class="ui form">
+
+        <label>
+          <%=form_for @post do |f| %> 
+            <%=f.label :subject, "Subject: " %>
+            <%=f.text_field :subject%> 
+            <br><br>
+            <%=f.label :content, "Content: " %>
+            <%=f.text_area :content%> 
+            <br><br>
+            <button class="ui standard button">
+            <%f.submit %>Submit!
+            </button>
+            <%end%>
+        </label>
+
+    </div>
+  </div>
+</div>
