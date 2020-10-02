@@ -10,7 +10,8 @@
     <%= image_tag("#{@climber.profile_pic}", class: "climber-show-image", height: "30%", width: "45%")%></center>
     <br><br>
 
-<center><button class="edit outline icon">
+<center>
+  <button class="ui standard button">
   <i class="edit icon"></i>
   <%= link_to "Edit Profile", edit_climber_path(@climber)%>
 </button>
