@@ -43,9 +43,9 @@
       <%end%>
       <br><br>
     <h2>Communities <%=@climber.name%> is in:</h2>
-    <%@climber.communities.each do |community|%>
+    <%@communities.each do |community|%>
       <h5><li><%= link_to community.name, community_path(community)%></li></h5>
-      <%end%>
+    <%end%>
       </p>
     </div>
   </div>

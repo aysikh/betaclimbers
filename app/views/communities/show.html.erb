@@ -6,7 +6,7 @@
   
 <div class="community-body">
   <h1>Other Members in the <%=@community.name%> Community:</h1>
-  <%@community.climbers.each do |climber|%> 
+  <%@climbers.each do |climber|%> 
     <li><%=link_to climber.name, climber_path(climber)%></li>
     <%end%>
   <br><br>

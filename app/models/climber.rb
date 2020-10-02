@@ -9,4 +9,8 @@ class Climber < ApplicationRecord
   
   validates :username, uniqueness: {case_sensitive: false, message: " must be unique."}
   
+
+
+
+
 end

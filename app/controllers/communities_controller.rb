@@ -10,6 +10,7 @@ class CommunitiesController < ApplicationController
   def show
     @community = Community.find(params[:id])
     cookies[:community_id] = @community.id
+    @climbers = @community.climbers.uniq
   end
 
   private

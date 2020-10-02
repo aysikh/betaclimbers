@@ -9,6 +9,7 @@ class ClimbersController < ApplicationController
   def show
     id = params[:id]
     @climber = Climber.find(id)
+    @communities = @climber.communities.uniq
   end
   
   def welcome
@@ -70,6 +71,7 @@ class ClimbersController < ApplicationController
   def update
     @climber.update(profile_params)
     if @climber.save
+      join_communities(params["climber"]["communities"])
       redirect_to climber_path(@climber)
     else
       render :edit

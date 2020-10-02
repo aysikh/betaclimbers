@@ -49,4 +49,15 @@ class ApplicationController < ActionController::Base
       redirect_to '/' 
     end
   end
+
+  def join_communities(coms)
+    coms.shift()
+    coms.each do |com_id|
+      Post.create(climber_id: session[:climber_id], community_id: com_id)
+    end
+  end
+
+
+
+
 end
