@@ -2,7 +2,7 @@
 
 <% if @route.errors %>
   <% @route.errors.full_messages.each do |error|%>
-    <%= error %>
+    <p class="route-create-error-list"><%= error %></p>
   <% end %>
 <% end %>
 
