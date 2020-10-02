@@ -1,18 +1,24 @@
+<%= render partial: "partials/navbar" %> 
+
 <% if @route.errors %>
   <% @route.errors.full_messages.each do |error|%>
     <%= error %>
   <% end %>
 <% end %>
 
-<div style="padding-right:4px;padding-left:1px;margin-right:2px">
-  <input type="text" class="wide" />
-<%= form_for @route do |f| %>
-  <h3><%= f.label "Name:" %><br></h3>
-  <%= f.text_field :name %><br><br>
-  <h3><%= f.label "Difficulty:" %><br></h3>
-  <%= f.text_field :difficulty %><br><br>
-  <h3><%= f.label "Style:" %><br></h3>
-  <%= f.text_area :style %><br><br>
-  <%= f.submit %>
-<% end %>
-</div>
+<div class="route-form-bg">
+  <div class="route-form-textbox">
+        <div class="ui form">
+          <%= form_for @route do |f| %>
+            <h3><%= f.label "Name:" %><br></h3>
+            <%= f.text_field :name %><br><br>
+            <h3><%= f.label "Difficulty:" %><br></h3>
+            <%= f.text_field :difficulty %><br><br>
+            <h3><%= f.label "Style:" %><br></h3>
+            <%= f.text_area :style %><br><br>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

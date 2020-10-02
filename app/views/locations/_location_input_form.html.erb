@@ -1,24 +1,33 @@
+<%= render partial: "partials/navbar" %> 
+
 <% if @location.errors %>
   <% @location.errors.full_messages.each do |error|%>
     <%= error %>
   <% end %>
 <% end %>
 
+<div class="location-create-form-bg">
+  <div class="location-form-box">
 
-<center>
-
-<%= form_for @location do |f| %>
-  <h3><%= f.label "Name:" %><br></h3>
-  <%= f.text_field :name %><br><br>
-  <h3><%= f.label "Rock Type:" %><br></h3>
-  <%= f.text_field :rock_type %><br><br>
-  <h3><%= f.label "Approach:" %><br></h3>
-  <%= f.text_area :approach %><br><br>
-  <h3><%= f.label "Popularity:" %><br></h3>
-  <%= f.text_field :popularity %><br><br>
-  <h3><%= f.label "Picture:" %><br></h3>
-  <%= f.text_area :picture %><br><br>
-  <%= f.submit %>
-<% end %>
-
+    <center>
+    <div class="ui form">
+    <%= form_for @location do |f| %>
+      <h3><%= f.label "Name:" %><br></h3>
+      <%= f.text_field :name %><br><br>
+      <h3><%= f.label "Rock Type:" %><br></h3>
+      <%= f.text_field :rock_type %><br><br>
+      <h3><%= f.label "Approach:" %><br></h3>
+      <%= f.text_area :approach %><br><br>
+      <h3><%= f.label "Popularity:" %><br></h3>
+      <%= f.text_field :popularity %><br><br>
+      <h3><%= f.label "Picture:" %><br></h3>
+      <%= f.text_area :picture %><br><br>
+      <br><br>
+      <button class="ui blue button">
+      <%f.submit %>Submit!
+      </button>
+    <% end %>
+    </div>
+  </div>
+</div>
 </center>
