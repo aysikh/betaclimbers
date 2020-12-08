@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_01_203339) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "climbers", force: :cascade do |t|
     t.string "name"
     t.string "experience"
@@ -53,8 +56,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_203339) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "climber_id"
-    t.integer "community_id"
+    t.bigint "climber_id"
+    t.bigint "community_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "subject"
@@ -65,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_203339) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.integer "climber_id"
-    t.integer "route_id"
+    t.bigint "climber_id"
+    t.bigint "route_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["climber_id"], name: "index_projects_on_climber_id"
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_203339) do
     t.string "name"
     t.string "difficulty"
     t.string "style"
-    t.integer "location_id"
+    t.bigint "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "picture"
