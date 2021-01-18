@@ -17,9 +17,9 @@
       <p><%= flash[:no_user] %></p>
       <%= form_with url: climbers_login_path do |form| %> 
         <%= form.label "username"%>
-        <%= form.text_field :username, value="Adam Ondra", required: true%>
+        <%= form.text_field :username, value:"Adam Ondra", required: true%>
         <%= form.label "password"%>
-        <%= form.password_field :password, value="Adam" required: true%>
+        <%= form.password_field :password, value:"Adam", required: true%>
         <%= form.submit "Climb On", :class => "climber-btn" %>
       <%end%>
     </div>
